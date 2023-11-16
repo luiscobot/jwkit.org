@@ -1,0 +1,2 @@
+class FieldServiceGroup < ApplicationRecord
+end
