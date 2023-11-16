@@ -1,0 +1,2 @@
+class FieldServiceReport < ApplicationRecord
+end

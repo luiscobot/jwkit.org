@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  month: 1
+  year: 1
+  shared_in_ministry: false
+  bible_studies: 1
+  hours: 1
+  comments: MyText
+
+two:
+  month: 1
+  year: 1
+  shared_in_ministry: false
+  bible_studies: 1
+  hours: 1
+  comments: MyText
