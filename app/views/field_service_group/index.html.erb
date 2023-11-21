@@ -1,2 +1,5 @@
 <h1>FieldServiceGroup#index</h1>
-<p>Find me in app/views/field_service_group/index.html.erb</p>
+
+<% @groups.each do |group| %>
+  <section><%= group.number %><section>
+<% end %>
