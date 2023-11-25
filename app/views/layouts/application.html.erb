@@ -11,13 +11,11 @@
     <%= hotwire_livereload_tags if Rails.env.development? %>
   </head>
 
-  <body class="grid grid-rows-layout grid-cols-layout h-screen">
+  <body class="grid grid-rows-layout grid-cols-layout h-screen bg-black">
     <%= render "layouts/sidebar" %>
     <%= render "layouts/header" %>
-    <main class="p-8 bg-jw-onyx">
-      <section class="min-h-full">
-        <%= yield %>
-      </section>
+    <main class="p-8 bg-jw-onyx text-white">
+      <%= yield %>
     </main>
   </body>
 </html>

@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateRows: {
-        'layout': '64px 1fr'
+        'layout': '64px 1fr',
+        'groups': 'auto 1fr 1fr'
       },
       gridTemplateColumns: {
         'layout': '20% 1fr'
