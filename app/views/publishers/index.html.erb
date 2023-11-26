@@ -1,2 +1,9 @@
-<h1>Publishers#index</h1>
-<p>Find me in app/views/publishers/index.html.erb</p>
+<section class="grid grid-cols-3 gap-8">
+  <h1 class="col-span-full mt-3 text-3xl font-bold">Publishers / Group <%= @field_service_group_id %></h1>
+
+  <% @publishers.each do |publisher| %>
+    <section class="flex flex-col justify-between p-4 bg-white rounded-lg text-black">
+      <h2 class="text-lg font-semibold text-jw-bunting"><%= publisher.name %></h2>
+    </section>
+  <% end %>
+</section>
