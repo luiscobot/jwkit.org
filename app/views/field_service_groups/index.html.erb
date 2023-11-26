@@ -1,9 +1,9 @@
-<section class="min-h-full grid grid-rows-groups grid-cols-3 gap-8">
+<section class="grid grid-cols-3 gap-8">
   <h1 class="col-span-full mt-3 text-3xl font-bold">Field Service Groups</h1>
 
   <% @groups.each do |group| %>
     <section class="flex flex-col justify-between p-4 bg-white rounded-lg text-black">
-      <h2 class="mb-2 text-lg font-semibold text-jw-bunting">Group <%= group.number %></h2>
+      <h2 class="mb-4 text-lg font-semibold text-jw-bunting">Group <%= group.number %></h2>
       <%= link_to "Publishers", field_service_group_publishers_path(group.id), class: "p-2.5 bg-jw-bunting rounded-md font-semibold text-sm text-white text-center" %>
     </section>
   <% end %>
