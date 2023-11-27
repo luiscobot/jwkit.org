@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'publishers/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -8,4 +7,6 @@ Rails.application.routes.draw do
   resources :field_service_groups, path: 'groups', only: [:index] do
     resources :publishers, only: [:index]
   end
+
+  get "/publishers/:publisher_id/reports/new", to: "field_service_reports#new"
 end
