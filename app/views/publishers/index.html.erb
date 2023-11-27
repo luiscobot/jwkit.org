@@ -1,9 +1,9 @@
 <section class="grid grid-cols-3 gap-8">
-  <h1 class="col-span-full mt-3 text-3xl font-bold">Publishers / Group <%= @field_service_group_id %></h1>
+<h1 class="col-span-full mt-3 text-3xl font-semibold">Group <%= @field_service_group_id %> · Publishers</h1>
 
   <% @publishers.each do |publisher| %>
-    <section class="flex flex-col justify-between p-4 bg-white rounded-lg text-black">
-      <h2 class="text-lg font-semibold text-jw-bunting"><%= publisher.name %></h2>
+    <section class="flex flex-col justify-between p-4 bg-white rounded-lg text-slate-950">
+      <h2 class="text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
     </section>
   <% end %>
 </section>
