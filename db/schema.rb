@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_11_16_044438) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_27_042510) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_044438) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "publisher_id", null: false
+    t.index ["publisher_id"], name: "index_field_service_reports_on_publisher_id"
   end
 
   create_table "publishers", force: :cascade do |t|
@@ -40,5 +42,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_11_16_044438) do
     t.index ["field_service_group_id"], name: "index_publishers_on_field_service_group_id"
   end
 
+  add_foreign_key "field_service_reports", "publishers"
   add_foreign_key "publishers", "field_service_groups"
 end
