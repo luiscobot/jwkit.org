@@ -1,5 +1,5 @@
 class FieldServiceGroupsController < ApplicationController
   def index
-    @groups = FieldServiceGroup.all
+    @field_service_groups = FieldServiceGroup.all
   end
 end
