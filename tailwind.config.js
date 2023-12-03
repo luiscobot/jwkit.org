@@ -20,5 +20,8 @@ module.exports = {
         'jw-onyx': 'hsl(0, 0%, 7%)'
       }
     }
-  }
+  },
+  plugins: [
+    require('@tailwindcss/forms')
+  ],
 }
