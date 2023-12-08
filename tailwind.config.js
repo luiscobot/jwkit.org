@@ -17,7 +17,9 @@ module.exports = {
         'jw-black': 'hsl(0, 0%, 0%)',
         'jw-bokara-gray': 'hsl(0, 0%, 16%)',
         'jw-bunting': 'hsl(222, 64%, 17%)',
-        'jw-onyx': 'hsl(0, 0%, 7%)'
+        'jw-onyx': 'hsl(0, 0%, 7%)',
+        'jw-san-marino': 'hsl(220, 33%, 48%)',
+        'jw-quick-silver': 'hsl(0, 0%, 65%)'
       }
     }
   },

@@ -4,7 +4,7 @@
   <% @field_service_groups.each do |field_service_group| %>
     <section class="flex flex-col justify-between p-4 bg-white rounded-xl text-slate-950">
       <h2 class="mb-4 text-lg font-medium text-jw-bunting">Field Service Group <%= field_service_group.number %></h2>
-      <%= link_to "Publishers", field_service_group_publishers_path(field_service_group.id), class: "p-2.5 bg-jw-bunting rounded-md font-medium text-sm text-slate-50 text-center" %>
+      <%= link_to "Publishers", field_service_group_publishers_path(field_service_group.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-slate-50 text-center" %>
     </section>
   <% end %>
 </section>

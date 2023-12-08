@@ -16,7 +16,7 @@
       </div>
 
       <div class="flex items-center gap-2 col-span-full">
-      <%= form.check_box :shared_in_ministry, class: "h-4 w-4 rounded border-jw-bunting/20 text-jw-bunting focus:ring-jw-bunting" %>
+        <%= form.check_box :shared_in_ministry, class: "h-4 w-4 rounded border-jw-san-marino/25 text-jw-san-marino focus:ring-jw-san-marino" %>
         <%= form.label :shared_in_ministry, class: label_style %>
       </div>
 
@@ -38,6 +38,6 @@
 
     <%= form.hidden_field :publisher_id, value: @publisher.id %>
 
-    <%= form.submit class: "mt-6 p-2.5 bg-jw-bunting rounded-md font-medium text-sm text-slate-50 text-center cursor-pointer" %>
+    <%= form.submit class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-slate-50 text-center cursor-pointer" %>
   <% end %>
 </section>
