@@ -6,5 +6,8 @@ Rails.application.routes.draw do
 
   get "groups", to: "field_service_groups#index", as: "field_service_groups"
   get "groups/:field_service_group_id/publishers", to: "publishers#index", as: "field_service_group_publishers"
+
   get "publishers/:publisher_id/reports/new", to: "field_service_reports#new", as: "new_publisher_field_service_report"
+
+  resources :field_service_reports
 end
