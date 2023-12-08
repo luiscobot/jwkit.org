@@ -36,6 +36,8 @@
       </div>
     </div>
 
+    <%= form.hidden_field :publisher_id, value: @publisher.id %>
+
     <%= form.submit class: "mt-6 p-2.5 bg-jw-bunting rounded-md font-medium text-sm text-slate-50 text-center cursor-pointer" %>
   <% end %>
 </section>
