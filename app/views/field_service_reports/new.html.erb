@@ -1,8 +1,13 @@
 <section class="grid grid-cols-4 gap-8">
-  <h1 class="col-span-full mt-3 text-3xl font-semibold">Create Field Service Report</h1>
+  <h1 class="col-span-full mt-3 text-3xl font-semibold">Field Service Report</h1>
 
   <%= form_with model: @field_service_report, class: "col-span-2" do |form| %>
-    <h2 class="text-xl font-medium">Publisher <%= @publisher.name %></h2>
+    <h2 class="flex justify-between items-center gap-2 text-xl font-medium">
+      <%= @publisher.name %>
+      <% if @publisher.privilege_of_service %>
+        <span class="inline-flex items-center rounded-md bg-jw-bunting/50 px-2 py-1 text-xs font-medium capitalize text-jw-white ring-1 ring-inset ring-jw-bunting"><%= @publisher.privilege_of_service %></span>
+      <% end %>
+    </h2>
 
     <div data-controller="toggle" class="mt-6 grid grid-cols-2 gap-6 p-6 bg-jw-seashell rounded-xl">
       <div class="flex flex-col gap-2 col-span-1">
