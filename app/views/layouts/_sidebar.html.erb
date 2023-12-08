@@ -1,10 +1,10 @@
-<aside class="row-span-full flex flex-col gap-6 p-6 bg-jw-black text-white">
+<aside class="row-span-full flex flex-col gap-6 p-6 bg-jw-black text-jw-white">
   <%= link_to "JWKit", field_service_groups_path, class: "font-medium text-xl" %>
   <nav>
     <ul class="flex flex-col gap-1">
       <% unless controller_name == "field_service_groups" && action_name == "index" %>
         <li>
-          <%= link_to field_service_groups_path, class: "flex items-center gap-3 p-2 rounded-md text-sm font-medium text-slate-300 hover:bg-jw-onyx hover:text-slate-50" do %>
+          <%= link_to field_service_groups_path, class: "flex items-center gap-3 p-2 rounded-md text-sm font-medium hover:bg-jw-onyx" do %>
             <%= inline_svg_tag "icons/field_service_group.svg", class: "w-6" %>Field Service Groups
           <% end %>
         </li>

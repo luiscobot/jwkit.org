@@ -4,7 +4,7 @@
   <%= form_with model: @field_service_report, class: "col-span-2" do |form| %>
     <h2 class="text-xl font-medium">Publisher <%= @publisher.name %></h2>
 
-    <div class="mt-6 grid grid-cols-2 gap-6 p-6 bg-white rounded-xl text-slate-950">
+    <div class="mt-6 grid grid-cols-2 gap-6 p-6 bg-jw-seashell rounded-xl">
       <div class="flex flex-col gap-2 col-span-1">
         <%= form.label :month, class: label_style %>
         <%= form.select :month, month_options, {}, class: control_style %>
@@ -38,6 +38,6 @@
 
     <%= form.hidden_field :publisher_id, value: @publisher.id %>
 
-    <%= form.submit class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-slate-50 text-center cursor-pointer" %>
+    <%= form.submit class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center cursor-pointer" %>
   <% end %>
 </section>

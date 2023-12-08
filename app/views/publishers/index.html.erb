@@ -2,9 +2,9 @@
 <h1 class="col-span-full mt-3 text-3xl font-semibold">Field Service Group <%= @field_service_group_id %> · Publishers</h1>
 
   <% @publishers.each do |publisher| %>
-    <section class="flex flex-col justify-between p-4 bg-white rounded-xl text-slate-950">
+    <section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl">
       <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
-      <%= link_to "Add Field Service Report", new_publisher_field_service_report_path(publisher.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-slate-50 text-center" %>
+      <%= link_to "Add Field Service Report", new_publisher_field_service_report_path(publisher.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
     </section>
   <% end %>
 </section>
