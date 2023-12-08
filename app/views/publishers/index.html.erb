@@ -1,9 +1,10 @@
 <section class="grid grid-cols-3 gap-8">
-<h1 class="col-span-full mt-3 text-3xl font-semibold">Group <%= @field_service_group_id %> · Publishers</h1>
+<h1 class="col-span-full mt-3 text-3xl font-semibold">Field Service Group <%= @field_service_group_id %> · Publishers</h1>
 
   <% @publishers.each do |publisher| %>
-    <section class="flex flex-col justify-between p-4 bg-white rounded-lg text-slate-950">
-      <h2 class="text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
+    <section class="flex flex-col justify-between p-4 bg-white rounded-xl text-slate-950">
+      <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
+      <%= link_to "Add Field Service Report", new_publisher_field_service_report_path(publisher.id), class: "p-2.5 bg-jw-bunting rounded-md font-medium text-sm text-slate-50 text-center" %>
     </section>
   <% end %>
 </section>
