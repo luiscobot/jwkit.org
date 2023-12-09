@@ -1,0 +1,47 @@
+<section class="grid grid-cols-3 gap-8">
+  <h1 class="col-span-full mt-3 text-3xl font-semibold">Field Service Group <%= @field_service_group.number %> · Field Service Reports</h1>
+
+  <% @field_service_reports.each do |field_service_report| %>
+    <section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl text-jw-black">
+      <div>
+        <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= field_service_report.publisher.name %></h2>
+      </div>
+
+      <div>
+        <div>
+          <p class="flex justify-between">
+            <span>Shared in ministry</span>
+            <span><%= field_service_report.shared_in_ministry %></span>
+          </p>
+        </div>
+
+        <% if field_service_report.hours %>
+          <div>
+            <p class="flex justify-between">
+              <span>Hours</span>
+              <span><%= field_service_report.hours %></span>
+            </p>
+          </div>
+        <% end %>
+
+        <% if field_service_report.bible_studies %>
+          <div>
+            <p class="flex justify-between">
+              <span>Bible studies</span>
+              <span><%= field_service_report.bible_studies %></span>
+            </p>
+          </div>
+        <% end %>
+
+        <% if field_service_report.comments.present? %>
+          <div>
+            <p class="flex flex-col justify-between">
+              <span>Comments</span>
+              <span><%= field_service_report.comments %></span>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </section>
+  <% end %>
+</section>
