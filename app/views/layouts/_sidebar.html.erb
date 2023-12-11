@@ -1,12 +1,34 @@
 <aside class="row-span-full flex flex-col gap-6 p-6 bg-jw-black text-jw-white">
   <%= link_to "JWKit", field_service_groups_path, class: "font-medium text-xl" %>
   <nav>
-    <ul class="flex flex-col gap-1">
-      <% unless controller_name == "field_service_groups" && action_name == "index" %>
+    <ul class="flex flex-col gap-6">
+      <li>
+        <ul class="flex flex-col gap-1">
+          <li>
+            <%= link_to field_service_groups_path, class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'field_service_groups'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+              <%= inline_svg_tag "icons/field_service_groups.svg", class: "w-6" %>Field Service Groups
+            <% end %>
+          </li>
+        </ul>
+      </li>
+
+      <% if controller_name == "publishers" || controller_name == "field_service_reports" && action_name == "index" %>
         <li>
-          <%= link_to field_service_groups_path, class: "flex items-center gap-3 p-2 rounded-md text-sm font-medium hover:bg-jw-onyx" do %>
-            <%= inline_svg_tag "icons/field_service_group.svg", class: "w-6" %>Field Service Groups
-          <% end %>
+          <div class="mb-2 text-xs leading-6 font-medium text-jw-san-marino">Field Service Group <%= @field_service_group.number %></div>
+
+          <ul class="flex flex-col gap-1">
+            <li>
+              <%= link_to field_service_group_publishers_path, class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'publishers'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+                <%= inline_svg_tag "icons/publishers.svg", class: "w-6" %>Publishers
+              <% end %>
+            </li>
+
+            <li>
+              <%= link_to field_service_group_reports_path, class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'field_service_reports'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+                <%= inline_svg_tag "icons/field_service_reports.svg", class: "w-6" %>Field Service Reports
+              <% end %>
+            </li>
+          </ul>
         </li>
       <% end %>
     </ul>
