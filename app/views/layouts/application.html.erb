@@ -14,7 +14,8 @@
   <body class="grid grid-rows-layout grid-cols-layout h-screen bg-black">
     <%= render "layouts/sidebar" %>
     <%= render "layouts/header" %>
-    <main class="p-8 bg-jw-onyx text-jw-white">
+    <main class="relative p-8 bg-jw-onyx text-jw-white">
+      <%= render "shared/flash" %>
       <%= yield %>
     </main>
   </body>
