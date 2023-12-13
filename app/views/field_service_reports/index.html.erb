@@ -1,5 +1,5 @@
 <section class="grid grid-cols-3 gap-8">
-  <h1 class="col-span-full mt-3 text-3xl font-semibold">Field Service Group <%= @field_service_group.number %> · Field Service Reports</h1>
+  <h1 class="col-span-full text-3xl font-semibold">Field Service Group <%= @field_service_group.number %> · Field Service Reports</h1>
 
   <% @field_service_reports.each do |field_service_report| %>
     <section class="flex flex-col justify-between overflow-hidden rounded-xl text-jw-black">
@@ -15,7 +15,7 @@
         <div class="py-2">
           <p class="flex justify-between text-sm leading-6">
             <span class="text-jw-bokara-gray/50">Shared in ministry</span>
-            <span class="text-jw-bokara-gray"><%= inline_svg_tag "icons/shared_in_ministry_#{field_service_report.shared_in_ministry}.svg", class: "w-6" %></span>
+            <span class="text-jw-bokara-gray"><%= inline_svg_tag "icons/outline/#{field_service_report.shared_in_ministry ? 'success' : 'danger'}.svg", class: "w-6" %></span>
           </p>
         </div>
 
