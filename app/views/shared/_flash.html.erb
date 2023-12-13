@@ -1,5 +1,5 @@
 <% flash.each do |key, value| %>
-  <div class="absolute top-8 right-8 inline-flex items-center gap-3 p-4 rounded-lg bg-success/20 font-medium text-sm text-success">
+  <div data-controller="flash" class="absolute top-8 right-8 inline-flex items-center gap-3 p-4 rounded-lg bg-success/20 font-medium text-sm text-success">
     <%= inline_svg_tag "icons/solid/success.svg", class: "w-6 text-success" %>
     <p><%= value %></p>
   </div>
