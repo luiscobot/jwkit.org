@@ -10,9 +10,13 @@ class FieldServiceReportsController < ApplicationController
   end
 
   def create
+    @publisher = Publisher.find(field_service_report_params[:publisher_id])
     @field_service_report = FieldServiceReport.new(field_service_report_params)
-    @field_service_report.save
-    redirect_to field_service_group_publishers_url(@field_service_report.publisher.field_service_group_id)
+    if @field_service_report.save
+      redirect_to field_service_group_publishers_url(@field_service_report.publisher.field_service_group_id)
+    else
+      render :new, status: :unprocessable_entity
+    end
   end
 
   private
