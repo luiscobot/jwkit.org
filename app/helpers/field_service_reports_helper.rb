@@ -1,10 +1,10 @@
 module FieldServiceReportsHelper
-  def current_month
-    Date.current.month
+  def last_month
+    Date.current.last_month.month
   end
 
   def month_options
-    options_for_select((1..12).map { |month| [Date::MONTHNAMES[month], month] }, current_month)
+    options_for_select((1..12).map { |month| [Date::MONTHNAMES[month], month] }, last_month)
   end
 
   def current_year
