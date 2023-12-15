@@ -1,7 +1,11 @@
 class FieldServiceReportsController < ApplicationController
   def index
     @field_service_group = FieldServiceGroup.find(params[:field_service_group_id])
-    @field_service_reports = @field_service_group.publishers.includes(:field_service_reports).map(&:field_service_reports).flatten
+    last_month = Date.current.last_month.month
+    last_month_year = Date.current.last_month.year
+    @field_service_reports_from_last_month = @field_service_group.publishers.includes(:field_service_reports)
+                                                                 .where(field_service_reports: { year: last_month_year, month: last_month })
+                                                                 .map(&:field_service_reports).flatten
   end
 
   def new
