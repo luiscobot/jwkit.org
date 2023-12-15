@@ -12,19 +12,19 @@
         </ul>
       </li>
 
-      <% if controller_name == "publishers" || controller_name == "field_service_reports" && action_name == "index" %>
+      <% if (controller_name == "publishers" && action_name == "index") || (controller_name == "field_service_reports" && (action_name == "index" || action_name == "new")) %>
         <li>
           <div class="mb-2 text-xs leading-6 font-medium text-jw-san-marino">Field Service Group <%= @field_service_group.number %></div>
 
           <ul class="flex flex-col gap-1">
             <li>
-              <%= link_to field_service_group_publishers_path, class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'publishers'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+              <%= link_to field_service_group_publishers_path(@field_service_group.id), class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'publishers' && action_name == 'index'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
                 <%= inline_svg_tag "icons/outline/publishers.svg", class: "w-6" %>Publishers
               <% end %>
             </li>
 
             <li>
-              <%= link_to field_service_group_reports_path, class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'field_service_reports'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+              <%= link_to field_service_group_reports_path(@field_service_group.id), class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'field_service_reports' && action_name == 'index'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
                 <%= inline_svg_tag "icons/outline/field_service_reports.svg", class: "w-6" %>Field Service Reports
               <% end %>
             </li>
