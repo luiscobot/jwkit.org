@@ -1,6 +1,8 @@
 <section class="grid grid-cols-3 gap-8">
   <h1 class="col-span-full text-3xl font-semibold">Field Service Group <%= @field_service_group.number %> · Publishers</h1>
 
+  <h2 class="col-span-full flex justify-between items-center gap-2 text-xl font-medium"><%= last_month_date %></h2>
+
   <% @publishers.each do |publisher| %>
     <section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl">
       <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
