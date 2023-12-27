@@ -9,7 +9,7 @@
       <% end %>
     </h2>
 
-    <div data-controller="toggle" class="mt-6 grid grid-cols-2 gap-6 p-6 bg-jw-seashell rounded-xl">
+    <div data-controller="form" class="mt-6 grid grid-cols-2 gap-6 p-6 bg-jw-seashell rounded-xl">
       <div class="flex flex-col gap-2 col-span-1">
         <%= form.label :month, class: label_style %>
         <%= form.select :month, month_options, {}, class: control_style %>
@@ -21,19 +21,19 @@
       </div>
 
       <div class="flex items-center gap-2 col-span-full">
-        <%= form.check_box :shared_in_ministry, data: { action: "change->toggle#toggle" }, class: "h-4 w-4 rounded border-jw-san-marino/25 text-jw-san-marino focus:ring-jw-san-marino" %>
+        <%= form.check_box :shared_in_ministry, data: { action: "change->form#toggle" }, class: "h-4 w-4 rounded border-jw-san-marino/25 text-jw-san-marino focus:ring-jw-san-marino" %>
         <%= form.label :shared_in_ministry, class: label_style %>
       </div>
 
       <div class="flex flex-col gap-2 col-span-1">
         <%= form.label :bible_studies, class: label_style %>
-        <%= form.text_field :bible_studies, data: { toggle_target: "control" }, disabled: true, class: control_style %>
+        <%= form.text_field :bible_studies, data: { form_target: "control" }, disabled: true, class: control_style %>
       </div>
 
       <% if @publisher.privilege_of_service %>
         <div class="flex flex-col gap-2 col-span-1">
           <%= form.label :hours, class: label_style %>
-          <%= form.text_field :hours, data: { toggle_target: "control" }, disabled: true, class: control_style %>
+          <%= form.text_field :hours, data: { form_target: "control" }, disabled: true, class: control_style %>
         </div>
       <% end %>
 

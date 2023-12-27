@@ -7,5 +7,5 @@ import { application } from "./application"
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
-import ToggleController from "./toggle_controller"
-application.register("toggle", ToggleController)
+import FormController from "./form_controller"
+application.register("form", FormController)
