@@ -13,4 +13,8 @@ export default class extends Controller {
       }
     });
   }
+
+  submit() {
+    this.element.requestSubmit();
+  }
 }

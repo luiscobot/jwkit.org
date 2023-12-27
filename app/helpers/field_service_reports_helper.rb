@@ -3,8 +3,8 @@ module FieldServiceReportsHelper
     Date.current.last_month.month
   end
 
-  def month_options
-    options_for_select((1..12).map { |month| [Date::MONTHNAMES[month], month] }, last_month)
+  def month_options(selected_option = nil)
+    options_for_select((1..12).map { |month| [Date::MONTHNAMES[month], month] }, selected_option || last_month)
   end
 
   def last_month_year
