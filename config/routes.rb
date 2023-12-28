@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  passwordless_for :users
+
   # Defines the root path route ("/")
-  # root "articles#index"
+  root to: redirect('groups')
 
   get "groups", to: "field_service_groups#index", as: "field_service_groups"
   get "groups/:field_service_group_id/publishers", to: "publishers#index", as: "field_service_group_publishers"

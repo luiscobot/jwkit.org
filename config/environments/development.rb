@@ -70,4 +70,7 @@ Rails.application.configure do
 
   config.hosts << "jwkit.local"
   config.action_cable.allowed_request_origins = ['https://jwkit.local']
+
+  config.action_mailer.default_url_options = { host: "https://jwkit.local" }
+  routes.default_url_options[:host] ||= "https://jwkit.local"
 end

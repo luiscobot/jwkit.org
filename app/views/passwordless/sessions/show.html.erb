@@ -1,0 +1,14 @@
+<section class="grid place-items-center h-full">
+  <%= render "shared/flash" %>
+
+  <%= form_with(model: @session, url: url_for(action: 'update'), scope: 'passwordless', method: 'patch', data: { turbo: false }, class: 'flex flex-col') do |f| %>
+    <h2 class="text-2xl font-bold leading-9 tracking-tight text-jw-seashell text-center">Secret token</h2>
+
+    <div class="flex flex-col gap-2 mt-10">
+      <%= f.label :token, autocomplete: "off", class: "font-medium text-sm leading-6 text-jw-seashell" %>
+      <%= f.text_field :token, class: control_style %>
+    </div>
+
+    <%= f.submit t(".confirm"), class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-jw-seashell capitalize text-center cursor-pointer" %>
+  <% end %>
+</section>
