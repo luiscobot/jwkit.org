@@ -1,4 +1,4 @@
-<section class="grid grid-cols-3 gap-8">
+<section class="flex flex-col gap-8 h-full">
   <h1 class="col-span-full text-3xl font-semibold">Field Service Group <%= @field_service_group.number %> · Field Service Reports</h1>
 
   <div class="col-span-full flex justify-between gap-2">
@@ -9,51 +9,57 @@
     <% end %>
   </div>
 
-  <% @field_service_reports.each do |field_service_report| %>
-    <section class="flex flex-col justify-between overflow-hidden rounded-xl text-jw-black">
-      <div class="p-4 bg-jw-san-marino">
-        <h2 class="flex justify-between text-lg font-medium text-jw-white"><%= field_service_report.publisher.name %>
-          <% if field_service_report.publisher.privilege_of_service %>
-            <span class="inline-flex items-center rounded-md bg-jw-bunting/50 px-2 py-1 text-xs font-medium capitalize text-jw-white ring-1 ring-inset ring-jw-bunting"><%= field_service_report.publisher.privilege_of_service %></span>
-          <% end %>
-        </h2>
-      </div>
+  <% if @field_service_reports.any? %>
+    <section class="grid grid-cols-3 gap-8">
+      <% @field_service_reports.each do |field_service_report| %>
+        <div class="flex flex-col justify-between overflow-hidden rounded-xl text-jw-black">
+          <div class="p-4 bg-jw-san-marino">
+            <h2 class="flex justify-between text-lg font-medium text-jw-white"><%= field_service_report.publisher.name %>
+              <% if field_service_report.publisher.privilege_of_service %>
+                <span class="inline-flex items-center rounded-md bg-jw-bunting/50 px-2 py-1 text-xs font-medium capitalize text-jw-white ring-1 ring-inset ring-jw-bunting"><%= field_service_report.publisher.privilege_of_service %></span>
+              <% end %>
+            </h2>
+          </div>
 
-      <div class="h-full px-4 py-2 bg-jw-seashell divide-y divide-jw-san-marino/20">
-        <div class="py-2">
-          <p class="flex justify-between text-sm leading-6">
-            <span class="text-jw-bokara-gray/50">Shared in ministry</span>
-            <span class="text-jw-bokara-gray"><%= inline_svg_tag "icons/outline/#{field_service_report.shared_in_ministry ? 'success' : 'error'}.svg", class: "w-6" %></span>
-          </p>
+          <div class="h-full px-4 py-2 bg-jw-seashell divide-y divide-jw-san-marino/20">
+            <div class="py-2">
+              <p class="flex justify-between text-sm leading-6">
+                <span class="text-jw-bokara-gray/50">Shared in ministry</span>
+                <span class="text-jw-bokara-gray"><%= inline_svg_tag "icons/outline/#{field_service_report.shared_in_ministry ? 'success' : 'error'}.svg", class: "w-6" %></span>
+              </p>
+            </div>
+
+            <% if field_service_report.shared_in_ministry %>
+              <div class="py-2">
+                <p class="flex justify-between text-sm leading-6">
+                  <span class="text-jw-bokara-gray/50">Bible studies</span>
+                  <span class="text-jw-bokara-gray"><%= field_service_report.bible_studies ? field_service_report.bible_studies : "0" %></span>
+                </p>
+              </div>
+            <% end %>
+
+            <% if field_service_report.hours %>
+              <div class="py-2">
+                <p class="flex justify-between text-sm leading-6">
+                  <span class="text-jw-bokara-gray/50">Hours</span>
+                  <span class="text-jw-bokara-gray"><%= field_service_report.hours %></span>
+                </p>
+              </div>
+            <% end %>
+
+            <% if field_service_report.comments.present? %>
+              <div class="py-2">
+                <p class="flex flex-col justify-between text-sm leading-6">
+                  <span class="text-jw-bokara-gray/50">Comments</span>
+                  <span class="text-jw-bokara-gray"><%= field_service_report.comments %></span>
+                </p>
+              </div>
+            <% end %>
+          </div>
         </div>
-
-        <% if field_service_report.shared_in_ministry %>
-          <div class="py-2">
-            <p class="flex justify-between text-sm leading-6">
-              <span class="text-jw-bokara-gray/50">Bible studies</span>
-              <span class="text-jw-bokara-gray"><%= field_service_report.bible_studies ? field_service_report.bible_studies : "0" %></span>
-            </p>
-          </div>
-        <% end %>
-
-        <% if field_service_report.hours %>
-          <div class="py-2">
-            <p class="flex justify-between text-sm leading-6">
-              <span class="text-jw-bokara-gray/50">Hours</span>
-              <span class="text-jw-bokara-gray"><%= field_service_report.hours %></span>
-            </p>
-          </div>
-        <% end %>
-
-        <% if field_service_report.comments.present? %>
-          <div class="py-2">
-            <p class="flex flex-col justify-between text-sm leading-6">
-              <span class="text-jw-bokara-gray/50">Comments</span>
-              <span class="text-jw-bokara-gray"><%= field_service_report.comments %></span>
-            </p>
-          </div>
-        <% end %>
-      </div>
+      <% end %>
     </section>
+  <% else %>
+    <%= render "empty" %>
   <% end %>
 </section>
