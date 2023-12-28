@@ -1,0 +1,12 @@
+<% content_for :dashboard do %>
+  <section class="grid grid-rows-layout grid-cols-layout h-full">
+    <%= render "layouts/sidebar" %>
+    <%= render "layouts/header" %>
+    <main class="relative p-8 bg-jw-onyx text-jw-white">
+      <%= render "shared/flash" %>
+      <%= yield %>
+    </main>
+  </section>
+<% end %>
+
+<%= render template: 'layouts/application' %>
