@@ -1,10 +1,5 @@
 <section class="grid grid-cols-3 gap-8">
   <h1 class="col-span-full text-3xl font-semibold">Field Service Groups</h1>
 
-  <% @field_service_groups.each do |field_service_group| %>
-    <section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl">
-      <h2 class="mb-4 text-lg font-medium text-jw-bunting">Field Service Group <%= field_service_group.number %></h2>
-      <%= link_to "Publishers", field_service_group_publishers_path(field_service_group.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
-    </section>
-  <% end %>
+  <%= render @field_service_groups %>
 </section>
