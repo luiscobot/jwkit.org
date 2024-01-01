@@ -3,5 +3,9 @@
 
   <h2 class="col-span-full flex justify-between items-center gap-2 text-xl font-medium"><%= last_month_date %></h2>
 
-  <%= render @publishers %>
+  <% if @publishers.any? %>
+    <%= render @publishers %>
+  <% else %>
+    <%= render "empty" %>
+  <% end %>
 </section>
