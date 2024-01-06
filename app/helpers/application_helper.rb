@@ -9,13 +9,13 @@ module ApplicationHelper
 
   def reports_date(month)
     if month
-      Date.new(Date.current.year, month.to_i, 1).strftime("%B %Y")
+      I18n.localize(Date.new(Date.current.year, month.to_i, 1), format: "%B, %Y")
     else
-      Date.current.last_month.strftime("%B %Y")
+      I18n.localize(Date.current.last_month, format: "%B, %Y")
     end
   end
 
   def last_month_date
-    Date.current.last_month.strftime("%B %Y")
+    I18n.localize(Date.current.last_month, format: "%B, %Y")
   end
 end

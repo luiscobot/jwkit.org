@@ -1,5 +1,5 @@
 <section class="flex flex-col gap-8 h-full">
-  <h1 class="col-span-full text-3xl font-semibold">Field Service Group <%= @field_service_group.number %> · Field Service Reports</h1>
+  <h1 class="col-span-full text-3xl font-semibold"><%= t("field_service_groups.title.singular") %> <%= @field_service_group.number %> · <%= t("field_service_reports.title.plural") %></h1>
 
   <div class="col-span-full flex justify-between gap-2">
     <h2 class="text-xl font-medium"><%= reports_date(params[:month]) %></h2>

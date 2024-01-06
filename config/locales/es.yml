@@ -1,0 +1,43 @@
+---
+es:
+  field_service_groups:
+    title:
+      singular: "Grupo para el servicio del campo"
+      plural: "Grupos para el servicio del campo"
+      variant:
+        singular: "Grupo de predicación"
+        plural: "Grupos de predicación"
+  publishers:
+    title: "Publicadores"
+    privilege_of_service:
+      auxiliary_pioneer: "Precursor auxiliar"
+      regular_pioneer: "Precursor regular"
+      special_pioneer: "Precursor especial"
+      field_missionary: "Misionero de campo"
+    empty:
+      title: "No hay publicadores con informes de servicio del campo pendientes"
+      description: "Ver todos los informes de servicio del campo."
+  field_service_reports:
+    title:
+      singular: "Informe de servicio del campo"
+      plural: "Informes de servicio del campo"
+    new:
+      title: "Añadir informe de predicación"
+      year: "Año"
+      month: "Mes"
+      shared_in_ministry: "Participó en el ministerio"
+      bible_studies: "Estudios bíblicos"
+      hours: "Horas"
+      comments: "Comentarios"
+    create:
+      title: "Crear informe de servicio del campo"
+    empty:
+      title: "No hay informes de servicio del campo"
+      description: "Comience agregando un nuevo informe."
+  layouts:
+    field_service_group: "Grupo de predicación"
+    field_service_groups: "Grupos de predicación"
+    field_service_reports: "Informes de predicación"
+    publishers: "Publicadores"
+  date:
+    month_names: [nil, "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]

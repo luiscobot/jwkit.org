@@ -1,4 +1,4 @@
 <section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl">
   <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
-  <%= link_to "Add Field Service Report", new_publisher_field_service_report_path(publisher.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
+  <%= link_to t("field_service_reports.new.title"), new_publisher_field_service_report_path(publisher.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
 </section>

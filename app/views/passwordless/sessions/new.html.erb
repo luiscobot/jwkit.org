@@ -2,7 +2,7 @@
   <%= render "shared/flash" %>
 
   <%= form_with(model: @session, url: url_for(action: 'new'), data: { turbo: 'false' }, class: 'flex flex-col') do |f| %>
-    <h2 class="text-2xl font-bold leading-9 tracking-tight text-jw-seashell text-center">Sign in to your account</h2>
+    <h2 class="text-2xl font-bold leading-9 tracking-tight text-jw-seashell text-center"><%= t("passwordless.sessions.new.title") %></h2>
 
     <div class="flex flex-col gap-2 mt-10">
       <% email_field_name = :"passwordless[#{email_field}]" %>
@@ -10,6 +10,6 @@
       <%= email_field_tag email_field_name, params.fetch(email_field_name, nil), required: true, autofocus: true, placeholder: t("passwordless.sessions.new.email.placeholder"), class: control_style %>
     </div>
 
-    <%= f.submit t("passwordless.sessions.new.submit"), class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-jw-seashell capitalize text-center cursor-pointer" %>
+    <%= f.submit t("passwordless.sessions.new.submit"), class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-jw-seashell text-center cursor-pointer" %>
   <% end %>
 </section>
