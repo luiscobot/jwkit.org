@@ -1,4 +1,9 @@
-<section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl">
-  <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= publisher.name %></h2>
-  <%= link_to t("field_service_reports.new.title"), new_publisher_field_service_report_path(publisher.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
+<section class="flex flex-col gap-4 justify-between overflow-hidden bg-jw-seashell rounded-xl">
+  <div class="p-4 bg-jw-san-marino">
+    <h2 class="text-lg font-medium text-jw-white"><%= publisher.name %></h2>
+  </div>
+
+  <div class="flex p-4">
+    <%= link_to t("field_service_reports.new.title"), new_publisher_field_service_report_path(publisher.id), class: "w-full p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
+  </div>
 </section>

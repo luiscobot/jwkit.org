@@ -1,4 +1,9 @@
-<section class="flex flex-col justify-between p-4 bg-jw-seashell rounded-xl">
-  <h2 class="mb-4 text-lg font-medium text-jw-bunting"><%= t("field_service_groups.title.variant.singular") %> <%= field_service_group.number %></h2>
-  <%= link_to t("publishers.title"), field_service_group_publishers_path(field_service_group.id), class: "p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
+<section class="flex flex-col gap-4 justify-between overflow-hidden bg-jw-seashell rounded-xl">
+  <div class="p-4 bg-jw-san-marino">
+    <h2 class="text-lg font-medium text-center text-jw-white"><%= t("field_service_groups.title.variant.singular") %> <%= field_service_group.number %></h2>
+  </div>
+
+  <div class="flex p-4">
+    <%= link_to t("publishers.title"), field_service_group_publishers_path(field_service_group.id), class: "w-full p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
+  </div>
 </section>
