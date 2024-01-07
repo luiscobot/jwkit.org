@@ -10,10 +10,12 @@ class FieldServiceReportsController < ApplicationController
     last_month_year = Date.current.last_month.year
 
     if params[:month].present?
-      @field_service_reports = @field_service_group.publishers.with_reports_from_month(params[:month], last_month_year)
+      @month = params[:month]
     else
-      @field_service_reports = @field_service_group.publishers.with_reports_from_month(last_month, last_month_year)
+      @month = last_month
     end
+
+    @field_service_reports = @field_service_group.publishers.with_reports_from_month(@month, last_month_year)
   end
 
   def new
