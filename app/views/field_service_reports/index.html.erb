@@ -4,20 +4,16 @@
   <div class="col-span-full flex justify-between gap-2">
     <h2 class="text-xl font-medium"><%= reports_date(params[:month]) %></h2>
 
-    <%= turbo_frame_tag "request_field_service_reports" do %>
-      <%= form_with url: { action: "index" }, method: :get, data: { controller: "form", action: "input->form#submit", turbo_frame: "list_field_service_reports", turbo_action: "advance" } do |form| %>
-        <%= form.select :month, month_options(params[:month]), {}, class: control_style %>
-      <% end %>
+    <%= form_with url: { action: "index" }, method: :get, data: { controller: "form", action: "input->form#submit" } do |form| %>
+      <%= form.select :month, month_options(params[:month]), {}, class: control_style %>
     <% end %>
   </div>
 
-  <%= turbo_frame_tag "list_field_service_reports" do %>
-    <% if @field_service_reports.any? %>
-      <section class="grid grid-cols-3 gap-8">
-        <%= render @field_service_reports %>
-      </section>
-    <% else %>
-      <%= render "empty" %>
-    <% end %>
+  <% if @field_service_reports.any? %>
+    <section class="grid grid-cols-3 gap-8">
+      <%= render @field_service_reports %>
+    </section>
+  <% else %>
+    <%= render "empty" %>
   <% end %>
 </section>
