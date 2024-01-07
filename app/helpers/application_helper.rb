@@ -9,7 +9,7 @@ module ApplicationHelper
 
   def reports_date(month)
     if month
-      I18n.localize(Date.new(Date.current.year, month.to_i, 1), format: "%B, %Y")
+      I18n.localize(Date.new(Date.current.last_month.year, month.to_i, 1), format: "%B, %Y")
     else
       I18n.localize(Date.current.last_month, format: "%B, %Y")
     end
