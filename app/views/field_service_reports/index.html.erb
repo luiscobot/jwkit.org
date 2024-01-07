@@ -4,7 +4,7 @@
   <div class="col-span-full flex justify-between gap-2">
     <h2 class="text-xl font-medium"><%= reports_date(@month) %></h2>
 
-    <%= form_with url: { action: "index" }, method: :get, data: { controller: "form", action: "input->form#submit" } do |form| %>
+    <%= form_with url: field_service_group_reports_path, method: :get, data: { controller: "form", action: "input->form#submit" } do |form| %>
       <%= form.select :month, month_options(params[:month]), {}, class: control_style %>
     <% end %>
   </div>
