@@ -11,7 +11,7 @@ module FieldServiceReportsHelper
     Date.current.last_month.year
   end
 
-  def year_options
-    options_for_select((last_month_year - 1..last_month_year + 1).to_a, last_month_year)
+  def year_options(selected_option = nil)
+    options_for_select((last_month_year - 1..last_month_year + 1).to_a, selected_option || last_month_year)
   end
 end
