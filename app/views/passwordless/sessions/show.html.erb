@@ -5,8 +5,8 @@
     <h2 class="text-2xl font-bold leading-9 tracking-tight text-jw-seashell text-center"><%= t("passwordless.sessions.show.title") %></h2>
 
     <div class="flex flex-col gap-2 mt-10">
-      <%= f.label :token, autocomplete: "off", class: "font-medium text-sm leading-6 text-jw-seashell" %>
-      <%= f.text_field :token, class: control_style %>
+      <%= f.label :token, class: "font-medium text-sm leading-6 text-jw-seashell" %>
+      <%= f.text_field :token, required: true, autofocus: true, autocomplete: "one-time-code", class: control_style %>
     </div>
 
     <%= f.submit t(".confirm"), class: "mt-6 p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-jw-seashell capitalize text-center cursor-pointer" %>
