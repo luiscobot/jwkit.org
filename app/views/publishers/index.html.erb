@@ -1,5 +1,8 @@
 <section class="grid grid-cols-3 gap-8">
-  <h1 class="col-span-full text-3xl font-semibold"><%= t("field_service_groups.title.singular") %> <%= @field_service_group.number %> · <%= t("publishers.title") %></h1>
+  <div class="col-span-full">
+    <h1 class="text-3xl font-semibold"><%= t("publishers.title") %></h1>
+    <p class="text-lg mt-2"><%= t("field_service_groups.title.singular") %> <%= @field_service_group.number %></p>
+  </div>
 
   <h2 class="col-span-full flex justify-between items-center gap-2 text-xl font-medium"><%= last_month_date %></h2>
 
