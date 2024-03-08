@@ -4,22 +4,16 @@
 
 @layer base {
   @font-face {
-    font-family: InterVariable;
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("InterVariable.woff2") format("woff2");
+      font-family: "Latina Essential";
+      src: url("latina-essential/latina-essential-bold.woff2") format("woff2");
+      font-weight: 700;
+      font-style: normal;
   }
 
   @font-face {
-    font-family: InterVariable;
-    font-style: italic;
-    font-weight: 100 900;
-    font-display: swap;
-    src: url("InterVariable-Italic.woff2") format("woff2");
-  }
-
-  html {
-    font-family: InterVariable, system-ui, sans-serif;
+      font-family: "Latina Essential";
+      src: url("latina-essential/latina-essential-medium.woff2") format("woff2");
+      font-weight: 500;
+      font-style: normal;
   }
 }
