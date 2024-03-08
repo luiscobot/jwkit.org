@@ -6,7 +6,7 @@ es:
         title: "Iniciar sesión en JWKit"
         email:
           label: "Correo electrónico"
-          placeholder: "correo@jw.org"
+          placeholder: "correo@jwkit.org"
         submit: "Iniciar sesión"
       create:
         email_sent: "Te hemos enviado un correo electrónico con un token secreto"
