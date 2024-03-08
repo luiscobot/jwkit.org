@@ -3,7 +3,7 @@ es:
   passwordless:
     sessions:
       new:
-        title: "Iniciar sesión"
+        title: "Iniciar sesión en JWKit"
         email:
           label: "Correo electrónico"
           placeholder: "correo@jw.org"
@@ -12,21 +12,22 @@ es:
         email_sent: "Te hemos enviado un correo electrónico con un token secreto"
         not_found: "No pudimos encontrar un usuario con esa dirección de correo electrónico"
         error: "Ocurrió un error"
+        sign_in_error: "Debes iniciar sesión antes de continuar"
       show:
-        title: "Iniciar sesión"
+        title: "Iniciar sesión en JWKit"
         confirm: "Confirmar"
       errors:
         invalid_token: "El token no es válido"
-        session_expired: "Su sesión ha caducado, inicie sesión nuevamente"
+        session_expired: "Tu sesión ha caducado, inicia sesión nuevamente"
         token_claimed: "Este enlace ya ha sido utilizado, intenta solicitar el enlace nuevamente"
       destroy:
         title: "Cerrar sesión"
-        signed_out: "Cerró sesión correctamente"
+        signed_out: "Cerraste sesión correctamente"
     mailer:
       sign_in:
         subject: "Iniciando sesión ✨"
         body: |-
-          Utilice este token para completar su inicio de sesión: %{token}
+          Utiliza este token para completar su inicio de sesión: %{token}
 
           Alternativamente, puedes utilizar este enlace para iniciar sesión directamente:
           %{magic_link}
