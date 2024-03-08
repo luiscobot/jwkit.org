@@ -34,7 +34,7 @@ class FieldServiceReportsController < ApplicationController
     @publisher = Publisher.find(field_service_report_params[:publisher_id])
     @field_service_report = FieldServiceReport.new(field_service_report_params)
     if @field_service_report.save
-      redirect_to field_service_group_publishers_url(@field_service_report.publisher.field_service_group_id), notice: "Field Service Report successfully created"
+      redirect_to field_service_group_publishers_url(@field_service_report.publisher.field_service_group_id), notice: I18n.t("field_service_reports.create.notices.success")
     else
       render :new, status: :unprocessable_entity
     end

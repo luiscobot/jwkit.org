@@ -8,19 +8,24 @@ es:
         singular: "Grupo de predicación"
         plural: "Grupos de predicación"
   publishers:
-    title: "Publicadores"
+    title:
+      singular: "Publicador"
+      plural: "Publicadores"
     privilege_of_service:
       auxiliary_pioneer: "Precursor auxiliar"
       regular_pioneer: "Precursor regular"
       special_pioneer: "Precursor especial"
       field_missionary: "Misionero de campo"
     empty:
-      title: "No hay publicadores con informes de servicio del campo pendientes"
-      description: "Ver todos los informes de servicio del campo."
+      title: "No hay publicadores con informes de predicación pendientes"
+      description: "Ver todos los informes"
   field_service_reports:
     title:
       singular: "Informe de servicio del campo"
       plural: "Informes de servicio del campo"
+      variant:
+        singular: "Informe de predicación"
+        plural: "Informes de predicación"
     new:
       title: "Añadir informe de predicación"
       year: "Año"
@@ -30,14 +35,11 @@ es:
       hours: "Horas"
       comments: "Comentarios"
     create:
-      title: "Crear informe de servicio del campo"
+      title: "Crear informe de predicación"
+      notices:
+        success: "Informe de predicación creado correctamente"
     empty:
-      title: "No hay informes de servicio del campo"
-      description: "Comience agregando un nuevo informe."
-  layouts:
-    field_service_group: "Grupo de predicación"
-    field_service_groups: "Grupos de predicación"
-    field_service_reports: "Informes de predicación"
-    publishers: "Publicadores"
+      title: "No hay informes de predicación"
+      description: "Comience agregando un nuevo informe"
   date:
     month_names: [nil, "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]

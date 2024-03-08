@@ -5,8 +5,8 @@
       <li>
         <ul class="flex flex-col gap-1">
           <li>
-            <%= link_to field_service_groups_path, class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'field_service_groups'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
-              <%= inline_svg_tag "icons/outline/field_service_groups.svg", class: "w-6" %><%= t("layouts.field_service_groups") %>
+            <%= link_to field_service_groups_path, class: "#{"text-jw-white bg-jw-onyx" if controller_name == "field_service_groups"} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+              <%= inline_svg_tag "icons/outline/field_service_groups.svg", class: "w-6" %><%= t("field_service_groups.title.variant.plural") %>
             <% end %>
           </li>
         </ul>
@@ -14,18 +14,18 @@
 
       <% if (controller_name == "publishers" && action_name == "index") || (controller_name == "field_service_reports" && (action_name == "index" || action_name == "new")) %>
         <li>
-          <div class="mb-2 text-xs leading-6 font-medium text-jw-san-marino"><%= t("layouts.field_service_group") %> <%= @field_service_group.number %></div>
+          <div class="mb-2 text-xs leading-6 font-medium text-jw-san-marino"><%= t("field_service_groups.title.variant.singular") %> <%= @field_service_group.number %></div>
 
           <ul class="flex flex-col gap-1">
             <li>
-              <%= link_to field_service_group_publishers_path(@field_service_group.id), class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'publishers' && action_name == 'index'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
-                <%= inline_svg_tag "icons/outline/publishers.svg", class: "w-6" %><%= t("layouts.publishers") %>
+              <%= link_to field_service_group_publishers_path(@field_service_group.id), class: "#{"text-jw-white bg-jw-onyx" if controller_name == "publishers" && action_name == "index"} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+                <%= inline_svg_tag "icons/outline/publishers.svg", class: "w-6" %><%= t("publishers.title.plural") %>
               <% end %>
             </li>
 
             <li>
-              <%= link_to field_service_group_reports_path(@field_service_group.id), class: "#{'text-jw-white bg-jw-onyx' if controller_name == 'field_service_reports' && action_name == 'index'} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
-                <%= inline_svg_tag "icons/outline/field_service_reports.svg", class: "w-6" %><%= t("layouts.field_service_reports") %>
+              <%= link_to field_service_group_reports_path(@field_service_group.id), class: "#{"text-jw-white bg-jw-onyx" if controller_name == "field_service_reports" && action_name == "index"} flex items-center gap-3 p-2 rounded-md text-sm font-medium text-jw-white/75 hover:text-jw-white hover:bg-jw-onyx" do %>
+                <%= inline_svg_tag "icons/outline/field_service_reports.svg", class: "w-6" %><%= t("field_service_reports.title.variant.plural") %>
               <% end %>
             </li>
           </ul>

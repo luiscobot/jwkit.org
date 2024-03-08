@@ -1,10 +1,13 @@
 <section class="col-span-full grid place-items-center h-full">
   <div class="flex flex-col items-center p-8">
     <%= inline_svg_tag "icons/outline/publishers.svg", class: "w-12 text-jw-seashell/25" %>
+
     <h3 class="text-lg font-semibold mt-2 text-center"><%= t("publishers.empty.title") %></h3>
+
     <p class="text-base mt-1 text-center"><%= t("publishers.empty.description") %></p>
+
     <%= link_to field_service_group_reports_path(@field_service_group.id), class: "flex items-center gap-1.5 mt-6 px-5 py-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" do %>
-      <%= inline_svg_tag "icons/outline/field_service_reports.svg", class: "w-6" %><%= t("field_service_reports.title.plural") %>
+      <%= inline_svg_tag "icons/outline/field_service_reports.svg", class: "w-6" %><%= t("field_service_reports.new.title") %>
     <% end %>
   </div>
 </section>
