@@ -1,5 +1,6 @@
 ---
 es:
+  congregation: "Congregación"
   field_service_groups:
     title:
       singular: "Grupo para el servicio del campo"
