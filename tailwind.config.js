@@ -10,12 +10,6 @@ export const theme = {
     'latina-essential': ['"Latina Essential"', 'sans-serif']
   },
   extend: {
-    gridTemplateRows: {
-      'layout': '64px 1fr'
-    },
-    gridTemplateColumns: {
-      'layout': '20% 1fr'
-    },
     colors: {
       'jw-black': 'hsl(0, 0%, 0%)',
       'jw-white': 'hsl(0, 0%, 100%)',
