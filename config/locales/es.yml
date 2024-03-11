@@ -20,6 +20,7 @@ es:
     empty:
       title: "No hay publicadores con informes de predicación pendientes"
       description: "Ver todos los informes"
+    view_detail: "Ver detalle"
   field_service_reports:
     title:
       singular: "Informe de servicio del campo"

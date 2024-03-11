@@ -1,9 +1,14 @@
-<section class="flex flex-col gap-4 justify-between overflow-hidden bg-jw-seashell rounded-xl">
-  <div class="p-4 bg-jw-san-marino">
-    <h2 class="text-lg font-medium text-center text-jw-white"><%= t("field_service_groups.title.variant.singular") %> <%= field_service_group.number %></h2>
+<section class="flex flex-col">
+  <div class="p-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
+    <h2 class="font-latina-essential font-medium text-base text-center text-jw-white"><%= t("field_service_groups.title.variant.singular") %> <%= field_service_group.number %></h2>
   </div>
 
-  <div class="flex p-4">
-    <%= link_to t("publishers.title.plural"), field_service_group_publishers_path(field_service_group.id), class: "w-full p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
+  <div class="grid place-items-center p-4 bg-jw-white">
+    <p class="font-latina-essential font-medium text-3xl text-jw-onyx"><%= field_service_group.publishers.length %></p>
+   <p class="mt-2 font-latina-essential font-medium text-xs text-jw-quick-silver"><%= t("publishers.title.plural") %></p>
+  </div>
+
+  <div class="px-4 py-3 bg-jw-seashell rounded-b-lg">
+    <%= link_to t("publishers.view_detail"), field_service_group_publishers_path(field_service_group.id), class: "block font-latina-essential font-medium text-sm text-jw-san-marino" %>
   </div>
 </section>
