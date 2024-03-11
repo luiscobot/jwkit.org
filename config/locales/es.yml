@@ -13,6 +13,7 @@ es:
       singular: "Publicador"
       plural: "Publicadores"
     privilege_of_service:
+      title: "Privilegio de servicio"
       auxiliary_pioneer: "Precursor auxiliar"
       regular_pioneer: "Precursor regular"
       special_pioneer: "Precursor especial"
@@ -29,7 +30,7 @@ es:
         singular: "Informe de predicación"
         plural: "Informes de predicación"
     new:
-      title: "Añadir informe de predicación"
+      title: "Añadir informe"
       year: "Año"
       month: "Mes"
       shared_in_ministry: "Participó en el ministerio"

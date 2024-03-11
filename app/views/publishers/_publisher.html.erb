@@ -1,9 +1,15 @@
-<section class="flex flex-col gap-4 justify-between overflow-hidden bg-jw-seashell rounded-xl">
-  <div class="p-4 bg-jw-san-marino">
-    <h2 class="text-lg font-medium text-jw-white"><%= publisher.name %></h2>
-  </div>
+<li class="group grid grid-cols-3 px-6 py-3 bg-jw-white last:rounded-b-lg hover:bg-jw-seashell">
+  <p class="flex items-center font-latina-essential font-medium text-base text-jw-onyx"><%= publisher.name %></p>
 
-  <div class="flex p-4">
-    <%= link_to t("field_service_reports.new.title"), new_publisher_field_service_report_path(publisher.id), class: "w-full p-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" %>
-  </div>
-</section>
+  <p class="flex justify-center items-center font-latina-essential font-medium text-base text-jw-san-marino">
+    <% if publisher.privilege_of_service %>
+      <span class="inline-block bg-jw-san-marino/10 px-3 py-1 rounded-lg"><%= t("publishers.privilege_of_service.#{ publisher.privilege_of_service.parameterize(separator: "_") }") %></span>
+    <% end %>
+  </p>
+
+  <p class="flex justify-end items-center font-latina-essential font-medium text-base text-jw-onyx text-right">
+    <%= link_to new_publisher_field_service_report_path(publisher.id), class: "opacity-0 group-hover:opacity-100 flex items-center gap-1 px-2 py-1.5 font-latina-essential font-medium text-sm text-jw-white bg-jw-bunting rounded-lg" do %>
+      <%= inline_svg_tag "icons/add.svg", class: "w-4 text-jw-white" %><%= t("field_service_reports.new.title") %>
+    <% end %>
+  </p>
+</li>
