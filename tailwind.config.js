@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 export const content = [
   './app/views/**/*.html.erb',
   './app/helpers/**/*.rb',
@@ -7,7 +9,7 @@ export const content = [
 
 export const theme = {
   fontFamily: {
-    'latina-essential': ['"Latina Essential"', 'sans-serif']
+    'inter': ['Inter', ...defaultTheme.fontFamily.sans]
   },
   extend: {
     colors: {
