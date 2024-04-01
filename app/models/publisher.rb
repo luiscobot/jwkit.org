@@ -5,4 +5,8 @@ class Publisher < ApplicationRecord
   scope :missing_last_month_reports, -> {
     where.not(id: FieldServiceReport.where(year: Date.current.last_month.year, month: Date.current.last_month.month).select(:publisher_id))
   }
+
+  def has_field_service_report_from_last_month?
+    field_service_reports.from_last_month.present?
+  end
 end
