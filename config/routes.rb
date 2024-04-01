@@ -4,13 +4,13 @@ Rails.application.routes.draw do
   passwordless_for :users
 
   # Defines the root path route ("/")
-  root to: redirect('groups')
+  root to: redirect("groups")
 
-  get "groups", to: "field_service_groups#index", as: "field_service_groups"
-  get "groups/:field_service_group_id/publishers", to: "publishers#index", as: "field_service_group_publishers"
-  get "groups/:field_service_group_id/reports", to: "field_service_reports#index", as: "field_service_group_reports"
+  resources :field_service_groups, only: :index, path: "groups" do
+    resources :publishers, only: :index do
+      resources :field_service_reports, only: [:new, :create], path: "reports"
+    end
 
-  get "publishers/:publisher_id/reports/new", to: "field_service_reports#new", as: "new_publisher_field_service_report"
-
-  resources :field_service_reports
+    resources :field_service_reports, only: :index, path: "reports"
+  end
 end
