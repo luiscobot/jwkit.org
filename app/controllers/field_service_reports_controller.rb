@@ -11,12 +11,15 @@ class FieldServiceReportsController < ApplicationController
   def new
     @publisher = Publisher.find(params[:publisher_id])
     @field_service_group = @publisher.field_service_group
-    @field_service_report = FieldServiceReport.new
+    @field_service_report = @publisher.field_service_reports.new
   end
 
   def create
-    @publisher = Publisher.find(field_service_report_params[:publisher_id])
-    @field_service_report = FieldServiceReport.new(field_service_report_params)
+    @publisher = Publisher.find(params[:publisher_id])
+    @field_service_report = @publisher.field_service_reports.new(field_service_report_params)
+    @field_service_report.year = Date.current.last_month.year
+    @field_service_report.month = Date.current.last_month.month
+
     if @field_service_report.save
       redirect_to field_service_group_publishers_url(@field_service_report.publisher.field_service_group_id), notice: I18n.t("field_service_reports.create.notices.success")
     else
@@ -24,9 +27,9 @@ class FieldServiceReportsController < ApplicationController
     end
   end
 
-  private
+private
 
   def field_service_report_params
-    params.require(:field_service_report).permit(:month, :year, :shared_in_ministry, :bible_studies, :hours, :comments, :publisher_id)
+    params.require(:field_service_report).permit(:shared_in_ministry, :bible_studies, :hours, :comments)
   end
 end
