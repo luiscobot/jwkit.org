@@ -1,27 +1,11 @@
 class FieldServiceReportsController < ApplicationController
   before_action :require_user!
 
-  layout 'dashboard'
+  layout "dashboard"
 
   def index
     @field_service_group = FieldServiceGroup.find(params[:field_service_group_id])
-
-    last_month = Date.current.last_month.month
-    last_month_year = Date.current.last_month.year
-
-    if params[:month].present?
-      @month = params[:month]
-    else
-      @month = last_month
-    end
-
-    if params[:year].present?
-      @year = params[:year]
-    else
-      @year = last_month_year
-    end
-
-    @field_service_reports = @field_service_group.publishers.with_reports_from_date(@month, @year)
+    @field_service_reports = @field_service_group.field_service_reports.from_last_month
   end
 
   def new

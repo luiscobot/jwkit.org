@@ -4,15 +4,6 @@
     <p class="text-lg mt-2"><%= t("field_service_groups.title.variant.singular") %> <%= @field_service_group.number %></p>
   </div>
 
-  <div class="col-span-full flex justify-between gap-2">
-    <h2 class="text-xl font-medium"><%= reports_date(@month, @year) %></h2>
-
-    <%= form_with url: field_service_group_reports_path, method: :get, data: { controller: "form", action: "input->form#submit" }, html: { class: "flex gap-2" } do |form| %>
-      <%= form.select :month, month_options(params[:month]), {}, class: control_style %>
-      <%= form.select :year, year_options(params[:year]), {}, class: control_style %>
-    <% end %>
-  </div>
-
   <% if @field_service_reports.any? %>
     <section class="grid grid-cols-3 gap-8">
       <%= render @field_service_reports %>
