@@ -38,7 +38,7 @@ es:
       hours: "Horas"
       comments: "Comentarios"
     create:
-      title: "Crear informe de predicación"
+      title: "Guardar informe"
       notices:
         success: "Informe de predicación creado correctamente"
     empty:

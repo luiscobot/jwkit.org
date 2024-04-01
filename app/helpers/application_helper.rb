@@ -1,10 +1,14 @@
 module ApplicationHelper
   def label_style
-    "font-medium text-sm leading-6 text-jw-bunting"
+    "font-inter font-medium text-base text-jw-onyx"
+  end
+
+  def checkbox_style
+    "h-6 w-6 rounded-lg border-none ring-2 ring-inset ring-jw-san-marino text-jw-san-marino focus:ring-jw-bunting"
   end
 
   def control_style
-    "py-1.5 border-0 shadow-sm rounded-md text-sm leading-6 text-jw-bunting ring-1 ring-inset ring-jw-san-marino/25 focus:ring-2 focus:ring-inset focus:ring-jw-san-marino disabled:bg-jw-black/5 disabled:cursor-not-allowed"
+    "px-3 py-2 border-none rounded-lg font-inter text-base text-jw-onyx ring-2 ring-inset ring-jw-san-marino focus:ring-2 focus:ring-inset focus:ring-jw-bunting disabled:bg-jw-bunting/20 disabled:cursor-not-allowed disabled:ring-transparent"
   end
 
   def reports_date(month, year)

@@ -1,0 +1,43 @@
+<%= form_with(model: [field_service_group, publisher, field_service_report]) do |form| %>
+  <div class="px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
+    <h2 class="font-inter font-medium text-base text-jw-white"><%= publisher.name %></h2>
+  </div>
+
+  <div data-controller="form" class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
+    <div class="flex col-span-full">
+      <% if publisher.privilege_of_service.present? %>
+        <div class="flex">
+          <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-san-marino bg-jw-san-marino/10"><%= t("publishers.privilege_of_service.#{publisher.privilege_of_service.parameterize(separator: '_')}") %></p>
+        </div>
+      <% end %>
+    
+      <div class="ml-auto flex">
+        <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-onyx bg-jw-seashell"><%= last_month_date %></p>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3 col-span-full">
+      <%= form.check_box :shared_in_ministry, data: { action: "change->form#toggle" }, class: checkbox_style %>
+      <%= form.label :shared_in_ministry, t("field_service_reports.new.shared_in_ministry"), class: label_style %>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <%= form.label :bible_studies, t("field_service_reports.new.bible_studies"), class: label_style %>
+      <%= form.text_field :bible_studies, data: { form_target: "control" }, disabled: true, class: control_style %>
+    </div>
+
+    <% if publisher.privilege_of_service.present? %>
+      <div class="flex flex-col gap-2">
+        <%= form.label :hours, t("field_service_reports.new.hours"), class: label_style %>
+        <%= form.text_field :hours, data: { form_target: "control" }, disabled: true, class: control_style %>
+      </div>
+    <% end %>
+
+    <div class="flex flex-col gap-2 col-span-full">
+      <%= form.label :comments, t("field_service_reports.new.comments"), class: label_style %>
+      <%= form.text_area :comments, class: "#{ control_style } resize-none" %>
+    </div>
+  </div>
+
+  <%= form.submit t("field_service_reports.create.title"), class: "w-60 mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-inter font-medium text-md leading-6 text-jw-white text-center cursor-pointer" %>
+<% end %>
