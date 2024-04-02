@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def checkbox_style
-    "h-6 w-6 rounded-lg border-none ring-2 ring-inset ring-jw-san-marino text-jw-san-marino focus:ring-jw-bunting"
+    "h-6 w-6 rounded-lg border-none ring-2 ring-inset ring-jw-san-marino/50 text-jw-san-marino hover:ring-jw-san-marino focus:ring-inset focus:ring-jw-san-marino focus:ring-offset-0"
   end
 
   def control_style
-    "px-3 py-2 border-none rounded-lg font-inter text-base text-jw-onyx ring-2 ring-inset ring-jw-san-marino focus:ring-2 focus:ring-inset focus:ring-jw-bunting disabled:bg-jw-bunting/20 disabled:cursor-not-allowed disabled:ring-transparent"
+    "px-3 py-2 border-none rounded-lg font-inter text-base text-jw-onyx ring-2 ring-inset ring-jw-san-marino/50 hover:ring-jw-san-marino focus:ring-inset focus:ring-2 focus:ring-jw-san-marino disabled:bg-jw-san-marino/50 disabled:cursor-not-allowed disabled:ring-transparent"
   end
 
   def reports_date(month, year)
