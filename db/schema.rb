@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_06_034536) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_03_061947) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -49,11 +49,18 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_06_034536) do
 
   create_table "publishers", force: :cascade do |t|
     t.string "name"
-    t.string "privilege_of_service"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "field_service_group_id", null: false
+    t.bigint "service_privilege_id"
     t.index ["field_service_group_id"], name: "index_publishers_on_field_service_group_id"
+    t.index ["service_privilege_id"], name: "index_publishers_on_service_privilege_id"
+  end
+
+  create_table "service_privileges", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,4 +72,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_06_034536) do
 
   add_foreign_key "field_service_reports", "publishers"
   add_foreign_key "publishers", "field_service_groups"
+  add_foreign_key "publishers", "service_privileges"
 end
