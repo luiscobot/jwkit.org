@@ -2,8 +2,6 @@
 
 one:
   name: MyString
-  privilege_of_service: MyString
 
 two:
   name: MyString
-  privilege_of_service: MyString
