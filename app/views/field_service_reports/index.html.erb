@@ -1,14 +1,20 @@
 <section class="flex flex-col gap-8 h-full">
-  <div class="col-span-full">
-    <h1 class="text-3xl font-semibold"><%= t("field_service_reports.title.plural") %></h1>
-    <p class="text-lg mt-2"><%= t("field_service_groups.title.variant.singular") %> <%= @field_service_group.number %></p>
+  <div>
+    <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("field_service_reports.title.plural") %></h1>
+    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("field_service_groups.title.variant.singular") %> <%= @field_service_group.number %></p>
   </div>
 
-  <% if @field_service_reports.any? %>
-    <section class="grid grid-cols-3 gap-8">
-      <%= render @field_service_reports %>
-    </section>
-  <% else %>
-    <%= render "empty" %>
-  <% end %>
+  <div class="flex flex-col gap-6 h-full">
+    <div class="flex justify-end">
+      <p class="w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= last_month_date %></p>
+    </div>
+
+    <% if @field_service_reports.any? %>
+      <section class="grid grid-cols-3 gap-8">
+        <%= render @field_service_reports %>
+      </section>
+    <% else %>
+      <%= render "empty" %>
+    <% end %>
+  </div>
 </section>

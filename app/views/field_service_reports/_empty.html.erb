@@ -1,13 +1,10 @@
 <section class="grid place-items-center h-full">
   <div class="flex flex-col items-center p-8">
-    <%= inline_svg_tag "icons/outline/field_service_reports.svg", class: "w-12 text-jw-seashell/25" %>
+    <%= inline_svg_tag "icons/field_service_reports.svg", class: "w-12 text-jw-san-marino" %>
 
-    <h3 class="text-lg font-semibold mt-2 text-center"><%= t("field_service_reports.empty.title") %></h3>
+    <h3 class="mt-2 font-inter font-bold text-xl leading-6 text-jw-white"><%= t("field_service_reports.empty.title") %></h3>
+    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("field_service_reports.empty.description") %></p>
 
-    <p class="text-base mt-1 text-center"><%= t("field_service_reports.empty.description") %></p>
-
-    <%= link_to field_service_group_publishers_path(@field_service_group.id), data: { turbo_frame: "_top" }, class: "flex items-center gap-1.5 mt-6 px-5 py-2.5 bg-jw-san-marino rounded-md font-medium text-sm text-center" do %>
-      <%= inline_svg_tag "icons/outline/publishers.svg", class: "w-6" %><%= t("publishers.title.plural") %>
-    <% end %>
+    <%= link_to t("publishers.title.plural"), field_service_group_publishers_path(@field_service_group), class: "flex justify-center w-60 mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-inter font-medium text-md leading-6 text-jw-white" %>
   </div>
 </section>

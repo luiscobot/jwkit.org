@@ -43,6 +43,6 @@ es:
         success: "Informe de predicación creado correctamente"
     empty:
       title: "No hay informes de predicación"
-      description: "Comience agregando un nuevo informe"
+      description: "Comienza agregando un nuevo informe"
   date:
     month_names: [nil, "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
