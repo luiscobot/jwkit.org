@@ -5,9 +5,9 @@
 
   <div data-controller="form" class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
     <div class="flex col-span-full">
-      <% if publisher.privilege_of_service.present? %>
+      <% if publisher.service_privilege.present? %>
         <div class="flex">
-          <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-san-marino bg-jw-san-marino/10"><%= t("publishers.privilege_of_service.#{publisher.privilege_of_service.parameterize(separator: '_')}") %></p>
+          <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-san-marino bg-jw-san-marino/10"><%= t("publishers.service_privilege.#{ publisher.service_privilege.name.parameterize(separator: '_') }") %></p>
         </div>
       <% end %>
     
@@ -26,7 +26,7 @@
       <%= form.text_field :bible_studies, data: { form_target: "control" }, disabled: true, class: control_style %>
     </div>
 
-    <% if publisher.privilege_of_service.present? %>
+    <% if publisher.service_privilege.present? %>
       <div class="flex flex-col gap-2">
         <%= form.label :hours, t("field_service_reports.new.hours"), class: label_style %>
         <%= form.text_field :hours, data: { form_target: "control" }, disabled: true, class: control_style %>
