@@ -6,29 +6,47 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-FieldServiceGroup.create(number: 101)
-FieldServiceGroup.create(number: 202)
-FieldServiceGroup.create(number: 303)
+field_service_groups = [
+  101,
+  102,
+  103
+]
 
-PRIVILEGE_OF_SERVICE = [
+field_service_groups.each do |group|
+  FieldServiceGroup.create(number: group)
+end
+
+service_privileges = [
   "auxiliary pioneer",
   "regular pioneer",
   "special pioneer",
   "field missionary"
 ]
 
+service_privileges.each do |privilege|
+  ServicePrivilege.create(name: privilege)
+end
+
 publishers = [
-  { name: "Kenneth Cook, Jr." },
-  { name: "Gage Fleegle" },
-  { name: "Samuel Herd" },
-  { name: "Geoffrey Jackson" },
-  { name: "Stephen Lett" },
-  { name: "Gerrit Lösch" },
-  { name: "Mark Sanderson" },
-  { name: "David Splane" },
-  { name: "Jeffrey Winder" }
+  "Kenneth Cook, Jr.",
+  "Gage Fleegle",
+  "Samuel Herd",
+  "Geoffrey Jackson",
+  "Stephen Lett",
+  "Gerrit Lösch",
+  "Mark Sanderson",
+  "David Splane",
+  "Jeffrey Winder"
 ]
 
-publishers.each do |publisher|
-  Publisher.create(name: publisher[:name], privilege_of_service: [PRIVILEGE_OF_SERVICE.sample, nil].sample, field_service_group: FieldServiceGroup.all.sample)
+FieldServiceGroup.all.each do |group|
+  group_publishers = publishers.shift(3)
+
+  group_publishers.each do |publisher|
+    service_privilege = [ServicePrivilege.all.sample, nil].sample
+
+    Publisher.create(name: publisher, service_privilege: service_privilege, field_service_group: group)
+  end
 end
+
+User.create(email: "mail@jwkit.org")
