@@ -1,6 +1,8 @@
-<% flash.each do |key, value| %>
-  <div data-controller="flash" class="absolute top-8 right-8 inline-flex items-center gap-3 p-4 rounded-lg bg-success/20 font-medium text-sm text-success">
-    <%= inline_svg_tag "icons/solid/success.svg", class: "w-6 text-success" %>
-    <p><%= value %></p>
+<% flash.each do |type, value| %>
+  <div data-controller="flash" class="fixed bottom-8 right-8 flex items-center p-3 rounded-lg <%= flash_style(type) %>">
+    <p class="flex justify-content items-center gap-2 font-inter font-medium text-sm text-jw-white">
+      <%= inline_svg_tag flash_icon(type), class: "w-5" %>
+      <%= value %>
+    </p>
   </div>
 <% end %>
