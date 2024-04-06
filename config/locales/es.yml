@@ -18,9 +18,6 @@ es:
       regular_pioneer: "Precursor regular"
       special_pioneer: "Precursor especial"
       field_missionary: "Misionero de campo"
-    empty:
-      title: "No hay publicadores con informes de predicación pendientes"
-      description: "Ver todos los informes"
     view_detail: "Ver detalle"
   field_service_reports:
     title:
@@ -43,6 +40,6 @@ es:
         success: "Informe de predicación creado correctamente"
     empty:
       title: "No hay informes de predicación"
-      description: "Comienza agregando un nuevo informe"
+      description: "Comienza añadiendo un nuevo informe"
   date:
     month_names: [nil, "Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
