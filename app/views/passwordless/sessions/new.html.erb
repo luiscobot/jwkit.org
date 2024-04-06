@@ -2,14 +2,14 @@
   <%= render "shared/flash" %>
 
   <%= form_with(model: @session, url: url_for(action: "new"), data: { turbo: "false" }, class: "flex flex-col w-60") do |f| %>
-    <h2 class="font-latina-essential text-xl font-bold leading-6 text-jw-white text-center"><%= t(".title") %></h2>
+    <h2 class="font-inter text-xl font-bold leading-6 text-jw-white text-center"><%= t(".title") %></h2>
 
     <div class="flex flex-col mt-8">
       <% email_field_name = :"passwordless[#{ email_field }]" %>
-      <%= f.label email_field_name, t(".email.label"), for: "passwordless_#{ email_field }", class: "font-latina-essential font-medium text-md leading-6 text-jw-white" %>
-      <%= email_field_tag email_field_name, params.fetch(email_field_name, nil), required: true, autofocus: true, placeholder: t(".email.placeholder"), class: "mt-2 px-3 py-2 rounded-lg border-none ring-2 ring-inset ring-jw-bokara-gray bg-jw-onyx font-latina-essential font-medium text-md leading-6 text-jw-white placeholder:text-jw-quick-silver hover:ring-jw-san-marino focus:ring-2 focus:ring-inset focus:ring-jw-san-marino" %>
+      <%= f.label email_field_name, t(".email.label"), for: "passwordless_#{ email_field }", class: "font-inter font-medium text-md leading-6 text-jw-white" %>
+      <%= email_field_tag email_field_name, params.fetch(email_field_name, nil), required: true, autofocus: true, placeholder: t(".email.placeholder"), class: "mt-2 px-3 py-2 rounded-lg border-none ring-2 ring-inset ring-jw-bokara-gray bg-jw-onyx font-inter font-medium text-md leading-6 text-jw-white placeholder:text-jw-quick-silver hover:ring-jw-san-marino focus:ring-2 focus:ring-inset focus:ring-jw-san-marino" %>
     </div>
 
-    <%= f.submit t(".submit"), class: "mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-latina-essential font-medium text-md leading-6 text-jw-white text-center cursor-pointer" %>
+    <%= f.submit t(".submit"), class: "mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-inter font-medium text-md leading-6 text-jw-white text-center cursor-pointer" %>
   <% end %>
 </section>
