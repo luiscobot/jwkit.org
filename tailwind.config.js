@@ -21,7 +21,8 @@ export const theme = {
       'jw-san-marino': 'hsl(220, 33%, 48%)',
       'jw-quick-silver': 'hsl(0, 0%, 65%)',
       'jw-seashell': 'hsl(0, 0%, 95%)',
-      'jw-success': 'hsl(121, 35%, 51%)'
+      'jw-success': 'hsl(121, 35%, 51%)',
+      'jw-failure': 'hsl(31, 67%, 53%)'
     }
   }
 };

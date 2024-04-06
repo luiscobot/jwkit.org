@@ -10,9 +10,9 @@
     </div>
 
     <% if @field_service_reports.any? %>
-      <section class="grid grid-cols-3 gap-8">
+      <div class="grid grid-cols-3 gap-8">
         <%= render @field_service_reports %>
-      </section>
+      </div>
     <% else %>
       <%= render "empty" %>
     <% end %>
