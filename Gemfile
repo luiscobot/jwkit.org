@@ -72,9 +72,14 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 
+  # Live reload gem for Hotwire Rails apps [https://github.com/kirillplatonov/hotwire-livereload]
   gem "hotwire-livereload"
 
+  # Preview mail in the browser instead of sending [https://github.com/ryanb/letter_opener]
   gem "letter_opener"
+
+  # Powerful debugbar for Ruby on Rails [https://github.com/julienbourdeau/debugbar]
+  gem "debugbar"
 end
 
 group :test do
