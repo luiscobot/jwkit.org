@@ -9,9 +9,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
     <%= hotwire_livereload_tags if Rails.env.development? %>
+    <%= debugbar_head %>
   </head>
 
   <body class="h-screen bg-jw-black">
     <%= content_for?(:dashboard) ? yield(:dashboard) : yield %>
+    <%= debugbar_body cable: { url: "https://jwkit.local/" } %>
   </body>
 </html>
