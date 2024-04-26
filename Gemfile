@@ -45,16 +45,16 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-# Use Sass to process CSS
-# gem "sassc-rails"
-
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing"
 
+# Embed SVG documents in your Rails views and style them with CSS [https://github.com/jamesmartin/inline_svg]
 gem "inline_svg"
 
+# Authentication for your Rails app without the icky-ness of passwords [https://github.com/mikker/passwordless]
 gem "passwordless"
 
+# Phlex lets you compose web views in pure Ruby [https://github.com/phlex-ruby/phlex-rails]
 gem "phlex-rails"
 
 group :development, :test do
