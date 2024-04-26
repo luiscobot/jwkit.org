@@ -26,6 +26,16 @@
   }
 }
 
+@layer components {
+  .otp {
+    @apply w-9 p-2 first:rounded-l-lg last:rounded-r-lg border-none bg-transparent font-inter font-medium text-base text-center uppercase text-jw-white hover:ring-jw-san-marino hover:ring-2 hover:ring-inset hover:ring-jw-san-marino focus:ring-2 focus:ring-inset focus:ring-jw-san-marino;
+  }
+
+  .submit {
+    @apply mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-inter font-medium text-base text-jw-white text-center cursor-pointer;
+  }
+}
+
 /* * { outline: 1px solid rgba(255,0,0,.2); }
 * * { outline: 1px solid rgba(0,255,0,.2); }
 * * * { outline: 1px solid rgba(0,0,255,.2); }
