@@ -9,7 +9,7 @@
         <ul class="flex flex-col gap-1">
           <li>
             <%= link_to field_service_groups_path, class: "flex items-center gap-3 px-3 py-2 rounded-lg font-inter font-medium text-base text-jw-white #{ current_page?(field_service_groups_path) ? "bg-jw-bunting" : "hover:bg-jw-bokara-gray" }" do %>
-              <%= inline_svg_tag "icons/field_service_groups.svg", class: "w-6 #{ current_page?(field_service_groups_path) ? "text-jw-san-marino" : "text-jw-quick-silver" }" %><%= t("field_service_groups.title.variant.plural") %>
+              <%= inline_svg_tag "icons/field_service_groups.svg", class: "w-6 #{ current_page?(field_service_groups_path) ? "text-jw-san-marino" : "text-jw-quick-silver" }" %><%= t("field_service_group.title.variant.plural") %>
             <% end %>
           </li>
         </ul>
@@ -17,18 +17,18 @@
 
       <% if (controller_name == "publishers" && action_name == "index") || (controller_name == "field_service_reports" && (action_name == "index" || action_name == "new")) %>
         <li>
-          <p class="mb-3 font-inter font-medium text-xs text-jw-san-marino"><%= t("field_service_groups.title.variant.singular") %></p>
+          <p class="mb-3 font-inter font-medium text-xs text-jw-san-marino"><%= t("field_service_group.title.variant.singular") %></p>
 
           <ul class="flex flex-col gap-1">
             <li>
               <%= link_to field_service_group_publishers_path(@field_service_group), class: "flex items-center gap-3 px-3 py-2 rounded-lg font-inter font-medium text-base text-jw-white #{ current_page?(field_service_group_publishers_path(@field_service_group)) ? "bg-jw-bunting" : "hover:bg-jw-bokara-gray" }" do %>
-                <%= inline_svg_tag "icons/publishers.svg", class: "w-6 #{ current_page?(field_service_group_publishers_path(@field_service_group)) ? "text-jw-san-marino" : "text-jw-quick-silver" }" %><%= t("publishers.title.plural") %>
+                <%= inline_svg_tag "icons/publishers.svg", class: "w-6 #{ current_page?(field_service_group_publishers_path(@field_service_group)) ? "text-jw-san-marino" : "text-jw-quick-silver" }" %><%= t("publisher.title.plural") %>
               <% end %>
             </li>
 
             <li>
               <%= link_to field_service_group_field_service_reports_path(@field_service_group), class: "flex items-center gap-3 px-3 py-2 rounded-lg font-inter font-medium text-base text-jw-white #{ current_page?(field_service_group_field_service_reports_path(@field_service_group)) ? "bg-jw-bunting" : "hover:bg-jw-bokara-gray" }" do %>
-                <%= inline_svg_tag "icons/field_service_reports.svg", class: "w-6 #{ current_page?(field_service_group_field_service_reports_path(@field_service_group)) ? "text-jw-san-marino" : "text-jw-quick-silver" }" %><%= t("field_service_reports.title.variant.plural") %>
+                <%= inline_svg_tag "icons/field_service_reports.svg", class: "w-6 #{ current_page?(field_service_group_field_service_reports_path(@field_service_group)) ? "text-jw-san-marino" : "text-jw-quick-silver" }" %><%= t("field_service_report.title.variant.plural") %>
               <% end %>
             </li>
           </ul>
