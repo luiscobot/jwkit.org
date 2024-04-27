@@ -1,7 +1,7 @@
 <section class="flex flex-col gap-8 h-full">
   <div>
-    <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publishers.title.plural") %></h1>
-    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("field_service_groups.title.variant.singular") %> <%= @field_service_group.number %></p>
+    <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publisher.title.plural") %></h1>
+    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("field_service_group.title.variant.singular") %> <%= @field_service_group.number %></p>
   </div>
 
   <div class="flex flex-col gap-6 h-full">
@@ -9,16 +9,16 @@
       <p class="w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= last_month_date %></p>
     </div>
 
-    <section>
+    <div>
       <div class="grid grid-cols-3 px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
-        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publishers.title.singular") %></p>
-        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publishers.service_privilege.title") %></p>
-        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("field_service_reports.title.variant.singular") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.title.singular") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.service_privilege.title") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("field_service_report.title.variant.singular") %></p>
       </div>
 
       <ul class="divide-y-2 divide-jw-seashell">
         <%= render @publishers %>
       </ul>
-    </section>
+    </div>
   </div>
 </section>
