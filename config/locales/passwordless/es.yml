@@ -26,7 +26,7 @@ es:
         signed_out: "Cerraste sesión correctamente"
     mailer:
       sign_in:
-        subject: "Iniciar sesión en JWKit"
+        subject: "%{token} es tu token para JWKit"
         body: |-
           Has solicitado iniciar sesión en tu aplicación JWKit con esta dirección de correo electrónico. Ingresa el siguiente token para iniciar sesión: %{token}
 

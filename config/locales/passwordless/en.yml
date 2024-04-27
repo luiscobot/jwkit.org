@@ -26,9 +26,11 @@ en:
         signed_out: "Signed out successfully"
     mailer:
       sign_in:
-        subject: "Login for JWKit"
+        subject: "%{token} is your code for JWKit"
         body: |-
-          Use this token to complete your sign in: %{token}
+          You have requested to log in to your JWKit application with this email address. Enter the following token to log in: %{token}
 
-          Alternatively you can use this link to sign in directly:
+          Alternatively, you can click the link below to log in.
           %{magic_link}
+
+          If you did not request this token, please ignore this email.
