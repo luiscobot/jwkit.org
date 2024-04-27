@@ -18,4 +18,8 @@ module ApplicationHelper
   def last_month_date
     I18n.localize(Date.current.last_month, format: "%B, %Y")
   end
+
+  def current_year
+    Date.current.year
+  end
 end
