@@ -1,14 +1,15 @@
 ---
 es:
   congregation: "Congregación"
-  field_service_groups:
+  field_service_group:
     title:
       singular: "Grupo para el servicio del campo"
       plural: "Grupos para el servicio del campo"
       variant:
         singular: "Grupo de predicación"
         plural: "Grupos de predicación"
-  publishers:
+    view_detail: "Ver detalle"
+  publisher:
     title:
       singular: "Publicador"
       plural: "Publicadores"
@@ -18,8 +19,14 @@ es:
       regular_pioneer: "Precursor regular"
       special_pioneer: "Precursor especial"
       field_missionary: "Misionero de campo"
-    view_detail: "Ver detalle"
-  field_service_reports:
+    congregation_record:
+      service_year: "Año de servicio"
+      shared_in_ministry: "Participó en el ministerio"
+      bible_studies: "Estudios bíblicos"
+      auxiliary_pioneer: "Precursor auxiliar"
+      hours: "Horas"
+      remarks: "Comentarios"
+  field_service_report:
     title:
       singular: "Informe de servicio del campo"
       plural: "Informes de servicio del campo"
