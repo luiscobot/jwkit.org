@@ -21,7 +21,7 @@ class FieldServiceReportsController < ApplicationController
     @field_service_report.month = Date.current.last_month.month
 
     if @field_service_report.save
-      redirect_to field_service_group_publishers_url(@publisher.field_service_group), notice: I18n.t("field_service_reports.create.notices.success")
+      redirect_to field_service_group_publishers_url(@publisher.field_service_group), notice: I18n.t("field_service_report.create.notices.success")
     else
       render :new, status: :unprocessable_entity
     end

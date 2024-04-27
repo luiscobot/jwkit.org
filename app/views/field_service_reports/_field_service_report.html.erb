@@ -1,4 +1,4 @@
-<section class="flex flex-col">
+<div class="flex flex-col">
   <div class="p-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
     <h2 class="font-inter font-medium text-base text-center text-jw-white"><%= field_service_report.publisher.name %></h2>
   </div>
@@ -6,7 +6,7 @@
   <div class="p-4 bg-jw-white rounded-b-lg divide-y-2 divide-jw-seashell">
     <div class="py-2 first:pt-0 last:pb-0">
       <p class="flex justify-between items-center font-inter font-medium text-sm">
-        <span class="text-jw-quick-silver"><%= t("field_service_reports.new.shared_in_ministry") %></span>
+        <span class="text-jw-quick-silver"><%= t("field_service_report.new.shared_in_ministry") %></span>
         <span class="<%= shared_in_ministry_style(field_service_report) %>"><%= inline_svg_tag "icons/#{ field_service_report.shared_in_ministry? ? 'success' : 'failure' }.svg", class: "w-6" %></span>
       </p>
     </div>
@@ -14,7 +14,7 @@
     <% if field_service_report.shared_in_ministry? %>
       <div class="py-2 first:pt-0 last:pb-0">
         <p class="flex justify-between items-center font-inter font-medium text-sm">
-          <span class="text-jw-quick-silver"><%= t("field_service_reports.new.bible_studies") %></span>
+          <span class="text-jw-quick-silver"><%= t("field_service_report.new.bible_studies") %></span>
           <span class="text-jw-onyx"><%= field_service_report.bible_studies.present? ? field_service_report.bible_studies : "0" %></span>
         </p>
       </div>
@@ -23,7 +23,7 @@
     <% if field_service_report.hours.present? %>
       <div class="py-2 first:pt-0 last:pb-0">
         <p class="flex justify-between items-center font-inter font-medium text-sm">
-          <span class="text-jw-quick-silver"><%= t("field_service_reports.new.hours") %></span>
+          <span class="text-jw-quick-silver"><%= t("field_service_report.new.hours") %></span>
           <span class="text-jw-onyx"><%= field_service_report.hours %></span>
         </p>
       </div>
@@ -32,10 +32,10 @@
     <% if field_service_report.comments.present? %>
       <div class="py-2 first:pt-0 last:pb-0">
         <p class="flex flex-col font-inter font-medium text-sm">
-          <span class="text-jw-quick-silver"><%= t("field_service_reports.new.comments") %></span>
+          <span class="text-jw-quick-silver"><%= t("field_service_report.new.comments") %></span>
           <span class="text-jw-onyx"><%= field_service_report.comments %></span>
         </p>
       </div>
     <% end %>
   </div>
-</section>
+</div>
