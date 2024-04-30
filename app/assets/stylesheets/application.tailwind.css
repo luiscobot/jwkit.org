@@ -34,6 +34,10 @@
   .submit {
     @apply mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-inter font-medium text-base text-jw-white text-center cursor-pointer;
   }
+
+  .fieldServiceReportProperty {
+    @apply flex justify-center first:justify-start last:justify-start items-center font-inter font-medium text-base text-jw-onyx;
+  }
 }
 
 /* * { outline: 1px solid rgba(255,0,0,.2); }

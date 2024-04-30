@@ -1,5 +1,5 @@
 <li class="group grid grid-cols-3 px-6 py-3 bg-jw-white last:rounded-b-lg hover:bg-jw-seashell">
-  <p class="flex items-center font-inter font-medium text-base text-jw-onyx"><%= publisher.name %></p>
+  <%= link_to publisher.name, publisher_path(publisher), class: "flex items-center font-inter font-medium text-base text-jw-onyx hover:text-jw-san-marino" %>
 
   <p class="flex justify-center items-center font-inter font-medium text-base text-jw-san-marino">
     <% if publisher.service_privilege.present? %>

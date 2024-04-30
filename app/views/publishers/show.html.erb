@@ -1,0 +1,54 @@
+<section class="flex flex-col gap-8 h-full">
+  <div>
+    <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publisher.title.singular") %></h1>
+    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= @publisher.name %></p>
+  </div>
+
+  <div class="flex flex-col gap-6 h-full">
+    <div class="flex justify-between">
+      <% if @publisher.service_privilege.present? %>
+        <p class="w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= t("publisher.service_privilege.#{ @publisher.service_privilege.name.parameterize(separator: '_') }") %></p>
+      <% end %>
+      <p class="ml-auto w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= current_year %></p>
+    </div>
+    
+    <div class="grid grid-cols-4 gap-6">
+      <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
+        <p class="font-inter font-medium text-base text-jw-onyx">26 marzo 1994</p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Fecha de nacimiento</p>
+      </div>
+
+      <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
+        <p class="font-inter font-medium text-base text-jw-onyx">7 enero 2007</p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Fecha de bautismo</p>
+      </div>
+
+      <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
+        <p class="font-inter font-medium text-base text-jw-onyx">Hombre</p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Género</p>
+      </div>
+
+      <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
+        <p class="font-inter font-medium text-base text-jw-onyx">Otras ovejas</p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Grupo</p>
+      </div>
+    </div>
+    
+    <div>
+      <div class="grid grid-cols-7 gap-6 items-center px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.congregation_record.service_year") %> <%= current_year %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.congregation_record.shared_in_ministry") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.congregation_record.bible_studies") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.congregation_record.auxiliary_pioneer") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.congregation_record.hours") %></p>
+        <p class="font-inter font-medium text-base text-jw-white text-center col-span-2"><%= t("publisher.congregation_record.remarks") %></p>
+      </div>
+
+      <ul class="contents divide-y-2 divide-jw-seashell">
+        <% @field_service_reports.each_with_index do |field_service_report, index| %>
+          <%= render "field_service_report", field_service_report: field_service_report, index: index %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</section>
