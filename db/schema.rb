@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_03_061947) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_30_023409) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -30,6 +30,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_03_061947) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "publisher_id", null: false
+    t.boolean "auxiliary_pioneer", default: false
     t.index ["publisher_id"], name: "index_field_service_reports_on_publisher_id"
   end
 
