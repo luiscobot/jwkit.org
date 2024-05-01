@@ -1,9 +1,9 @@
 module PublishersHelper
   def field_service_report_month(field_service_report, index)
     if field_service_report.present?
-      Date::MONTHNAMES[field_service_report.month]
+      I18n.t("date.month_names")[field_service_report.month]
     else
-      Date::MONTHNAMES[index + 1]
+      I18n.t("date.month_names")[index + 1]
     end
   end
 
