@@ -3,7 +3,7 @@ es:
   passwordless:
     sessions:
       new:
-        title: "Iniciar sesión en JWKit"
+        title: "Iniciar sesión"
         email:
           label: "Correo electrónico"
           placeholder: "correo@jwkit.org"
@@ -13,7 +13,7 @@ es:
         not_found: "No pudimos encontrar un usuario con esa dirección de correo electrónico"
         error: "Ocurrió un error"
       show:
-        title: "Iniciar sesión en JWKit"
+        title: "Iniciar sesión"
         token: "Token"
         confirm: "Confirmar"
       errors:
