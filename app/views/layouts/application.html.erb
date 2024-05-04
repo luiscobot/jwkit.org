@@ -14,6 +14,6 @@
 
   <body class="h-screen bg-jw-black">
     <%= content_for?(:dashboard) ? yield(:dashboard) : yield %>
-    <%= debugbar_body cable: { url: "https://jwkit.local/" } %>
+    <%= debugbar_body cable: { url: "https://jwkit.local" }, activeRecord: { adapter: "postgresql" } %>
   </body>
 </html>
