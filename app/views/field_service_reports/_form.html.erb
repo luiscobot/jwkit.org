@@ -7,7 +7,7 @@
     <div class="flex col-span-full">
       <% if publisher.service_privilege.present? %>
         <div class="flex">
-          <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-san-marino bg-jw-san-marino/10"><%= t("publisher.service_privilege.#{ publisher.service_privilege.name.parameterize(separator: '_') }") %></p>
+          <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-san-marino bg-jw-san-marino/10"><%= t("publisher.service_privilege.#{ publisher.service_privilege }") %></p>
         </div>
       <% end %>
     
@@ -16,26 +16,26 @@
       </div>
     </div>
 
-    <div class="flex items-center gap-3 col-span-full">
-      <%= form.check_box :shared_in_ministry, data: { action: "change->form#toggle" }, class: checkbox_style %>
-      <%= form.label :shared_in_ministry, t("field_service_report.new.shared_in_ministry"), class: label_style %>
+    <div class="flex items-center gap-2 col-span-full">
+      <%= form.check_box :shared_in_ministry, data: { action: "change->form#toggle" }, class: "checkbox" %>
+      <%= form.label :shared_in_ministry, t("field_service_report.new.shared_in_ministry"), class: "label" %>
     </div>
 
     <div class="flex flex-col gap-2">
-      <%= form.label :bible_studies, t("field_service_report.new.bible_studies"), class: label_style %>
-      <%= form.text_field :bible_studies, data: { form_target: "control" }, disabled: true, class: control_style %>
+      <%= form.label :bible_studies, t("field_service_report.new.bible_studies"), class: "label" %>
+      <%= form.text_field :bible_studies, data: { form_target: "control" }, disabled: true, class: "control" %>
     </div>
 
     <% if publisher.service_privilege.present? %>
       <div class="flex flex-col gap-2">
-        <%= form.label :hours, t("field_service_report.new.hours"), class: label_style %>
-        <%= form.text_field :hours, data: { form_target: "control" }, disabled: true, class: control_style %>
+        <%= form.label :hours, t("field_service_report.new.hours"), class: "label" %>
+        <%= form.text_field :hours, data: { form_target: "control" }, disabled: true, class: "control" %>
       </div>
     <% end %>
 
     <div class="flex flex-col gap-2 col-span-full">
-      <%= form.label :comments, t("field_service_report.new.comments"), class: label_style %>
-      <%= form.text_area :comments, class: "#{ control_style } resize-none" %>
+      <%= form.label :comments, t("field_service_report.new.comments"), class: "label" %>
+      <%= form.text_area :comments, class: "control resize-none" %>
     </div>
   </div>
 
