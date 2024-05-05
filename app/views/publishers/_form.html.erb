@@ -1,0 +1,87 @@
+<%= form_with(model: publisher) do |form| %>
+  <div class="px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
+    <h2 class="font-inter font-medium text-base text-jw-white"><%= t("publisher.title.singular") %></h2>
+  </div>
+
+  <div data-controller="form" class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
+    <div class="flex flex-col gap-2">
+      <%= form.label :first_name, t("publisher.new.first_name"), class: "label" %>
+      <%= form.text_field :first_name, class: "control" %>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <%= form.label :last_name, t("publisher.new.last_name"), class: "label" %>
+      <%= form.text_field :last_name, class: "control" %>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <%= form.label :date_of_birth, t("publisher.new.date_of_birth"), class: "label" %>
+      <%= form.date_field :date_of_birth, class: "control" %>
+    </div>
+
+    <div class="col-span-full">
+      <%= tag.fieldset class: "grid grid-cols-2 gap-x-6" do %>
+        <%= tag.legend t("publisher.new.gender.legend"), class: "legend" %>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :gender, "male", class: "radio" %>
+          <%= form.label :gender_male, t("publisher.new.gender.male"), class: "label" %>
+        </div>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :gender, "female", class: "radio" %>
+          <%= form.label :gender_female, t("publisher.new.gender.female"), class: "label" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="flex flex-col gap-2">
+      <%= form.label :date_of_baptism, t("publisher.new.date_of_baptism"), class: "label" %>
+      <%= form.date_field :date_of_baptism, class: "control" %>
+    </div>
+    
+    <div class="col-span-full">
+      <%= tag.fieldset class: "grid grid-cols-2 gap-6" do %>
+        <%= tag.legend t("publisher.new.group.legend"), class: "legend" %>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :group, "other_sheep", class: "radio" %>
+          <%= form.label :group_other_sheep, t("publisher.new.group.other_sheep"), class: "label" %>
+        </div>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :group, "anointed", class: "radio" %>
+          <%= form.label :group_anointed, t("publisher.new.group.anointed"), class: "label" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="col-span-full">
+      <%= tag.fieldset class: "grid grid-cols-2 gap-x-6" do %>
+        <%= tag.legend t("publisher.new.service_privilege.legend"), class: "legend" %>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :service_privilege, "auxiliary_pioneer", class: "radio" %>
+          <%= form.label :service_privilege_auxiliary_pioneer, t("publisher.new.service_privilege.auxiliary_pioneer"), class: "label" %>
+        </div>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :service_privilege, "regular_pioneer", class: "radio" %>
+          <%= form.label :service_privilege_regular_pioneer, t("publisher.new.service_privilege.regular_pioneer"), class: "label" %>
+        </div>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :service_privilege, "special_pioneer", class: "radio" %>
+          <%= form.label :service_privilege_special_pioneer, t("publisher.new.service_privilege.special_pioneer"), class: "label" %>
+        </div>
+
+        <div class="flex items-center gap-2 mt-2">
+          <%= form.radio_button :service_privilege, "field_missionary", class: "radio" %>
+          <%= form.label :service_privilege_field_missionary, t("publisher.new.service_privilege.field_missionary"), class: "label" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= form.submit t("publisher.create.title"), class: "w-60 submit" %>
+<% end %>

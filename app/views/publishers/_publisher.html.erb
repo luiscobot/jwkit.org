@@ -3,7 +3,7 @@
 
   <p class="flex justify-center items-center font-inter font-medium text-base text-jw-san-marino">
     <% if publisher.service_privilege.present? %>
-      <span class="inline-block bg-jw-san-marino/10 px-3 py-1 rounded-lg"><%= t("publisher.service_privilege.#{ publisher.service_privilege.name.parameterize(separator: "_") }") %></span>
+      <span class="inline-block bg-jw-san-marino/10 px-3 py-1 rounded-lg"><%= t("publisher.service_privilege.#{ publisher.service_privilege }") %></span>
     <% end %>
   </p>
 

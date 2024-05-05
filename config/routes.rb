@@ -18,5 +18,5 @@ Rails.application.routes.draw do
     resources :field_service_reports, only: :index, path: "reports"
   end
 
-  resources :publishers, only: :show
+  resources :publishers, only: [:new, :create, :show]
 end

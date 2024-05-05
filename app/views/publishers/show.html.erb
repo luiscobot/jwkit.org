@@ -9,30 +9,30 @@
   <div class="flex flex-col gap-6 h-full">
     <div class="flex justify-between">
       <% if @publisher.service_privilege.present? %>
-        <p class="w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= t("publisher.service_privilege.#{ @publisher.service_privilege.name.parameterize(separator: '_') }") %></p>
+        <p class="w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= t("publisher.service_privilege.#{ @publisher.service_privilege }") %></p>
       <% end %>
       <p class="ml-auto w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= current_year %></p>
     </div>
     
     <div class="grid grid-cols-4 gap-6">
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
-        <p class="font-inter font-medium text-base text-jw-onyx">26 marzo 1994</p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Fecha de nacimiento</p>
+        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.date_of_birth.present? ? l(@publisher.date_of_birth, format: "%d %B %Y") : "-" %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.date_of_birth") %></p>
       </div>
 
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
-        <p class="font-inter font-medium text-base text-jw-onyx">7 enero 2007</p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Fecha de bautismo</p>
+        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.date_of_baptism.present? ? l(@publisher.date_of_baptism, format: "%d %B %Y") : "-" %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.date_of_baptism") %></p>
       </div>
 
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
-        <p class="font-inter font-medium text-base text-jw-onyx">Hombre</p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Género</p>
+        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.gender.present? ? t("publisher.new.gender.#{ @publisher.gender }") : "-" %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.gender.legend") %></p>
       </div>
 
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
-        <p class="font-inter font-medium text-base text-jw-onyx">Otras ovejas</p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver">Grupo</p>
+        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.group.present? ? t("publisher.new.group.#{ @publisher.group }") : "-" %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.group.legend") %></p>
       </div>
     </div>
     

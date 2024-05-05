@@ -26,6 +26,30 @@ es:
       auxiliary_pioneer: "Precursor auxiliar"
       hours: "Horas"
       remarks: "Comentarios"
+    new:
+      title: "Añadir publicador"
+      first_name: "Nombre"
+      last_name: "Apellido"
+      date_of_birth: "Fecha de nacimiento"
+      gender:
+        legend: "Género"
+        male: "Hombre"
+        female: "Mujer"
+      date_of_baptism: "Fecha de bautismo"
+      group:
+        legend: "Grupo"
+        other_sheep: "Otras ovejas"
+        anointed: "Ungidos"
+      service_privilege:
+        legend: "Privilegio de servicio"
+        auxiliary_pioneer: "Precursor auxiliar"
+        regular_pioneer: "Precursor regular"
+        special_pioneer: "Precursor especial"
+        field_missionary: "Misionero de campo"
+    create:
+      title: "Crear publicador"
+      notices:
+        success: "Publicador creado correctamente"
   field_service_report:
     title:
       singular: "Informe de servicio del campo"
@@ -42,7 +66,7 @@ es:
       hours: "Horas"
       comments: "Comentarios"
     create:
-      title: "Guardar informe"
+      title: "Crear informe"
       notices:
         success: "Informe de predicación creado correctamente"
     empty:
