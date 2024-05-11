@@ -46,6 +46,7 @@ es:
         regular_pioneer: "Precursor regular"
         special_pioneer: "Precursor especial"
         field_missionary: "Misionero de campo"
+      field_service_group: "Grupo"
     create:
       title: "Crear publicador"
       notices:

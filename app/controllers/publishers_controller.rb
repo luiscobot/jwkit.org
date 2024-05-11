@@ -10,6 +10,7 @@ class PublishersController < ApplicationController
 
   def new
     @publisher = Publisher.new
+    @field_service_groups = FieldServiceGroup.all
   end
 
   def create
@@ -18,6 +19,7 @@ class PublishersController < ApplicationController
     if @publisher.save
       redirect_to publisher_url(@publisher), notice: I18n.t("publisher.create.notices.success")
     else
+      @field_service_groups = FieldServiceGroup.all
       render :new, status: :unprocessable_entity
     end
   end
@@ -42,6 +44,6 @@ class PublishersController < ApplicationController
   private
 
   def publisher_params
-    params.require(:publisher).permit(:first_name, :last_name, :date_of_birth, :gender, :date_of_baptism, :group, :service_privilege)
+    params.require(:publisher).permit(:first_name, :last_name, :date_of_birth, :gender, :date_of_baptism, :group, :service_privilege, :field_service_group_id)
   end
 end
