@@ -1,9 +1,15 @@
 <% content_for(:html_title) { t("publisher.title.plural") } %>
 
 <section class="flex flex-col gap-8 h-full">
-  <div>
+  <div class="flex justify-between items-start">
+    <div>
     <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publisher.title.plural") %></h1>
     <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("field_service_group.title.variant.singular") %> <%= @field_service_group.number %></p>
+    </div>
+
+    <div>
+      <%= link_to t("publisher.new.title"), new_publisher_path, class: "action" %>
+    </div>
   </div>
 
   <div class="flex flex-col gap-6 h-full">

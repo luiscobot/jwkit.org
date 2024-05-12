@@ -39,6 +39,10 @@
     @apply flex justify-center first:justify-start last:justify-start items-center font-inter font-medium text-base text-jw-onyx;
   }
 
+  .action {
+    @apply inline-block px-4 py-2 rounded-lg bg-jw-bunting font-inter font-medium text-base text-jw-white text-center cursor-pointer;
+  }
+
   .label, .legend {
     @apply font-inter font-medium text-base text-jw-onyx w-full;
   }
