@@ -11,6 +11,7 @@ class PublishersController < ApplicationController
   def new
     @publisher = Publisher.new
     @field_service_groups = FieldServiceGroup.all
+    @action = I18n.t("publisher.create.title")
   end
 
   def create
@@ -20,7 +21,26 @@ class PublishersController < ApplicationController
       redirect_to publisher_url(@publisher), notice: I18n.t("publisher.create.notices.success")
     else
       @field_service_groups = FieldServiceGroup.all
+      @action = I18n.t("publisher.create.title")
       render :new, status: :unprocessable_entity
+    end
+  end
+
+  def edit
+    @publisher = Publisher.find(params[:id])
+    @field_service_groups = FieldServiceGroup.all
+    @action = I18n.t("publisher.update.title")
+  end
+
+  def update
+    @publisher = Publisher.find(params[:id])
+
+    if @publisher.update(publisher_params)
+      redirect_to publisher_url(@publisher), notice: I18n.t("publisher.update.notices.success")
+    else
+      @field_service_groups = FieldServiceGroup.all
+      @action = I18n.t("publisher.update.title")
+      render :edit, status: :unprocessable_entity
     end
   end
 

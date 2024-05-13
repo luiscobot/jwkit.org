@@ -13,12 +13,25 @@ es:
     title:
       singular: "Publicador"
       plural: "Publicadores"
+    first_name: "Nombre"
+    last_name: "Apellido"
+    date_of_birth: "Fecha de nacimiento"
+    gender:
+      title: "Género"
+      male: "Hombre"
+      female: "Mujer"
+    date_of_baptism: "Fecha de bautismo"
+    group:
+      title: "Grupo"
+      other_sheep: "Otras ovejas"
+      anointed: "Ungidos"
     service_privilege:
       title: "Privilegio de servicio"
       auxiliary_pioneer: "Precursor auxiliar"
       regular_pioneer: "Precursor regular"
       special_pioneer: "Precursor especial"
       field_missionary: "Misionero de campo"
+    field_service_group: "Grupo"
     congregation_record:
       service_year: "Año de servicio"
       shared_in_ministry: "Participó en el ministerio"
@@ -28,29 +41,16 @@ es:
       remarks: "Comentarios"
     new:
       title: "Añadir publicador"
-      first_name: "Nombre"
-      last_name: "Apellido"
-      date_of_birth: "Fecha de nacimiento"
-      gender:
-        legend: "Género"
-        male: "Hombre"
-        female: "Mujer"
-      date_of_baptism: "Fecha de bautismo"
-      group:
-        legend: "Grupo"
-        other_sheep: "Otras ovejas"
-        anointed: "Ungidos"
-      service_privilege:
-        legend: "Privilegio de servicio"
-        auxiliary_pioneer: "Precursor auxiliar"
-        regular_pioneer: "Precursor regular"
-        special_pioneer: "Precursor especial"
-        field_missionary: "Misionero de campo"
-      field_service_group: "Grupo"
     create:
       title: "Crear publicador"
       notices:
         success: "Publicador creado correctamente"
+    edit:
+      title: "Editar publicador"
+    update:
+      title: "Actualizar publicador"
+      notices:
+        success: "Publicador actualizado correctamente"
   field_service_report:
     title:
       singular: "Informe de servicio del campo"

@@ -1,9 +1,15 @@
 <% content_for(:html_title) { t("publisher.title.singular") } %>
 
 <section class="flex flex-col gap-8 h-full">
-  <div>
-    <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publisher.title.singular") %></h1>
-    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= @publisher.name %></p>
+  <div class="flex justify-between items-start">
+    <div>
+      <h1 class="font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publisher.title.singular") %></h1>
+      <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= @publisher.name %></p>
+    </div>
+
+    <div>
+      <%= link_to t("publisher.edit.title"), edit_publisher_path(@publisher), class: "action" %>
+    </div>
   </div>
 
   <div class="flex flex-col gap-6 h-full">
@@ -17,22 +23,22 @@
     <div class="grid grid-cols-4 gap-6">
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
         <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.date_of_birth.present? ? l(@publisher.date_of_birth, format: "%d %B %Y") : "-" %></p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.date_of_birth") %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.date_of_birth") %></p>
       </div>
 
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
         <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.date_of_baptism.present? ? l(@publisher.date_of_baptism, format: "%d %B %Y") : "-" %></p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.date_of_baptism") %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.date_of_baptism") %></p>
       </div>
 
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
-        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.gender.present? ? t("publisher.new.gender.#{ @publisher.gender }") : "-" %></p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.gender.legend") %></p>
+        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.gender.present? ? t("publisher.gender.#{ @publisher.gender }") : "-" %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.gender.title") %></p>
       </div>
 
       <div class="flex flex-col gap-2 px-6 py-4 rounded-lg bg-jw-white">
-        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.group.present? ? t("publisher.new.group.#{ @publisher.group }") : "-" %></p>
-        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.new.group.legend") %></p>
+        <p class="font-inter font-medium text-base text-jw-onyx"><%= @publisher.group.present? ? t("publisher.group.#{ @publisher.group }") : "-" %></p>
+        <p class="font-inter font-medium text-xs uppercase text-jw-quick-silver"><%= t("publisher.group.title") %></p>
       </div>
     </div>
     

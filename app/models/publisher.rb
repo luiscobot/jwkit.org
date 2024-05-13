@@ -1,10 +1,8 @@
 class Publisher < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :date_of_birth, presence: true
   validate :date_of_birth_cannot_be_in_the_future
   validates :gender, presence: true, inclusion: { in: ["male", "female"] }
-  validates :date_of_baptism, presence: true
   validate :date_of_baptism_cannot_be_in_the_future
   validates :group, presence: true, inclusion: { in: ["other_sheep", "anointed"] }
   validates :service_privilege, inclusion: { in: ["auxiliary_pioneer", "regular_pioneer", "special_pioneer", "field_missionary"] }, allow_blank: true
@@ -23,13 +21,13 @@ class Publisher < ApplicationRecord
   private
 
   def date_of_birth_cannot_be_in_the_future
-    if date_of_birth.present? && date_of_birth > Date.today
+    if date_of_birth.present? && date_of_birth.future?
       errors.add(:date_of_birth, "cannot be in the future")
     end
   end
 
   def date_of_baptism_cannot_be_in_the_future
-    if date_of_baptism.present? && date_of_baptism > Date.today
+    if date_of_baptism.present? && date_of_baptism.future?
       errors.add(:date_of_baptism, "cannot be in the future")
     end
   end

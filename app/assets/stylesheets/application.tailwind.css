@@ -43,8 +43,12 @@
     @apply inline-block px-4 py-2 rounded-lg bg-jw-bunting font-inter font-medium text-base text-jw-white text-center cursor-pointer;
   }
 
-  .label, .legend {
+  .label {
     @apply font-inter font-medium text-base text-jw-onyx w-full;
+  }
+
+  .legend {
+    @apply mb-2 font-inter font-medium text-base text-jw-onyx w-full;
   }
 
   .checkbox {
