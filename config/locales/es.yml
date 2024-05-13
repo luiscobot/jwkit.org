@@ -58,6 +58,9 @@ es:
       title: "Actualizar publicador"
       notices:
         success: "Publicador actualizado correctamente"
+    empty:
+      title: "No hay publicadores"
+      description: "Comienza añadiendo un nuevo publicador"
   field_service_report:
     title:
       singular: "Informe de servicio del campo"

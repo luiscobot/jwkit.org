@@ -17,16 +17,20 @@
       <p class="w-fit px-3 py-2 rounded-lg ring-2 ring-inset ring-jw-onyx font-inter font-medium text-base text-jw-white"><%= last_month_date %></p>
     </div>
 
-    <div>
-      <div class="grid grid-cols-3 px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
-        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.title.singular") %></p>
-        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.service_privilege.title") %></p>
-        <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("field_service_report.title.variant.singular") %></p>
-      </div>
+    <% if @publishers.any? %>
+      <div>
+        <div class="grid grid-cols-3 px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
+          <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.title.singular") %></p>
+          <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("publisher.service_privilege.title") %></p>
+          <p class="font-inter font-medium text-base text-jw-white text-center"><%= t("field_service_report.title.variant.singular") %></p>
+        </div>
 
-      <ul class="divide-y-2 divide-jw-seashell">
-        <%= render @publishers %>
-      </ul>
-    </div>
+        <ul class="divide-y-2 divide-jw-seashell">
+          <%= render @publishers %>
+        </ul>
+      </div>
+    <% else %>
+      <%= render "empty" %>
+    <% end %>
   </div>
 </section>

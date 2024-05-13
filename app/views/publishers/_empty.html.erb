@@ -1,0 +1,10 @@
+<div class="grid place-items-center h-full">
+  <div class="flex flex-col items-center p-8">
+    <%= inline_svg_tag "icons/publishers.svg", class: "w-12 text-jw-san-marino" %>
+  
+    <h3 class="mt-2 font-inter font-bold text-xl leading-6 text-jw-white"><%= t("publisher.empty.title") %></h3>
+    <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("publisher.empty.description") %></p>
+  
+    <%= link_to t("publisher.new.title"), new_publisher_path, class: "flex justify-center w-60 mt-4 p-2 rounded-lg ring-2 ring-inset ring-jw-san-marino bg-jw-bunting font-inter font-medium text-base text-jw-white" %>
+  </div>
+</div>
