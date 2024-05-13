@@ -5,7 +5,7 @@ class PublishersController < ApplicationController
 
   def index
     @field_service_group = FieldServiceGroup.find_by!(number: params[:field_service_group_id])
-    @publishers = @field_service_group.publishers
+    @publishers = @field_service_group.publishers.sort_by(&:name)
   end
 
   def new
