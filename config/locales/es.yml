@@ -9,6 +9,13 @@ es:
         singular: "Grupo de predicación"
         plural: "Grupos de predicación"
     view_detail: "Ver detalle"
+    number: "Número"
+    new:
+      title: "Añadir grupo de predicación"
+    create:
+      title: "Crear grupo de predicación"
+      notices:
+        success: "Grupo de predicación creado correctamente"
   publisher:
     title:
       singular: "Publicador"

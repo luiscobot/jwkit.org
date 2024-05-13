@@ -1,0 +1,18 @@
+<%= form_with(model: field_service_group, class: "col-span-3") do |form| %>
+  <div class="grid grid-cols-3 gap-4">
+    <div class="col-span-2">
+      <div class="px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
+        <h2 class="font-inter font-medium text-base text-jw-white"><%= t("field_service_group.title.singular") %></h2>
+      </div>
+
+      <div class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
+        <div class="flex flex-col gap-2">
+          <%= form.label :number, t("field_service_group.number"), class: "label" %>
+          <%= form.text_field :number, class: "control" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= form.submit @action, class: "w-60 submit" %>
+<% end %>
