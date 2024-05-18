@@ -12,17 +12,17 @@
 
       <div data-authentication-target="otp" data-action="keydown->authentication#validate focusin->authentication#select paste->authentication#paste keyup->authentication#navigate" class="flex justify-between items-center mt-2">
         <div class="flex rounded-lg ring-2 ring-inset ring-jw-bokara-gray bg-jw-onyx">
-          <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" }, autofocus: true %>
-          <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" } %>
-          <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" } %>
+          <%= f.text_field "alphanum", maxlength: 1, required: true, data: { control: "otp" }, class: "otp", autofocus: true %>
+          <%= f.text_field "alphanum", maxlength: 1, required: true, data: { control: "otp" }, class: "otp" %>
+          <%= f.text_field "alphanum", maxlength: 1, required: true, data: { control: "otp" }, class: "otp" %>
         </div>
 
         <span class="w-1 h-1 rounded-full bg-jw-bokara-gray"></span>
 
         <div class="flex rounded-lg ring-2 ring-inset ring-jw-bokara-gray bg-jw-onyx">
-          <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" } %>
-          <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" } %>
-          <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" } %>
+          <%= f.text_field "alphanum", maxlength: 1, required: true, data: { control: "otp" }, class: "otp" %>
+          <%= f.text_field "alphanum", maxlength: 1, required: true, data: { control: "otp" }, class: "otp" %>
+          <%= f.text_field "alphanum", maxlength: 1, required: true, data: { control: "otp" }, class: "otp" %>
         </div>
       </div>
     </div>
