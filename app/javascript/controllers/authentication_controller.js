@@ -9,7 +9,7 @@ export default class extends Controller {
   }
 
   validate(ev) {
-    if (!/^[0-9a-zA-Z]{1}$/.test(ev.key) && ev.key !== "Backspace" && ev.key !== "Delete" && ev.key !== "Enter") {
+    if (!/^[0-9a-zA-Z]{1}$/.test(ev.key) && ev.key !== "Tab" && ev.key !== "Backspace" && ev.key !== "Delete" && ev.key !== "Enter") {
       ev.preventDefault();
     }
   }
