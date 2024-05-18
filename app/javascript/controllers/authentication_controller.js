@@ -9,8 +9,7 @@ export default class extends Controller {
   }
 
   validate(ev) {
-    // allow digits (0-9) and letters (a-zA-Z).
-    if (!/^[0-9a-zA-Z]{1}$/.test(ev.key) && ev.key !== "Backspace" && ev.key !== "Delete") {
+    if (!/^[0-9a-zA-Z]{1}$/.test(ev.key) && ev.key !== "Backspace" && ev.key !== "Delete" && ev.key !== "Enter") {
       ev.preventDefault();
     }
   }
@@ -33,7 +32,7 @@ export default class extends Controller {
   
   navigate(ev) {
     let index = this.inputs.indexOf(ev.target);
-    if (/^\d$/.test(ev.key) || ev.key.length === 1 && isNaN(ev.key) || ev.key === "ArrowRight") {
+    if (/^[0-9a-zA-Z]{1}$/.test(ev.key) || ev.key === "ArrowRight") {
       if (index < this.inputs.length - 1) {
         this.inputs[index + 1].focus();
       }
