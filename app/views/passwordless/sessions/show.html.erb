@@ -3,14 +3,14 @@
 <section class="grid place-items-center h-full">
   <%= render "shared/flash" %>
 
-  <%= form_with(model: @session, url: url_for(action: "update"), scope: "passwordless", method: "patch", data: { controller: "otp", action: "submit->otp#authenticate", turbo: false }, class: "flex flex-col w-60") do |f| %>
+  <%= form_with(model: @session, url: url_for(action: "update"), scope: "passwordless", method: "patch", data: { controller: "authentication", action: "submit->authentication#authenticate", turbo: false }, class: "flex flex-col w-60") do |f| %>
     <h2 class="font-inter text-xl font-bold leading-6 text-jw-white text-center"><%= t(".title") %></h2>
 
     <div class="flex flex-col mt-8">
       <%= f.label :token, t(".token"), class: "font-inter font-medium text-base text-jw-white" %>
       <%= f.hidden_field :token %>
 
-      <div data-otp-target="control" data-action="keydown->otp#validate focusin->otp#select paste->otp#paste keyup->otp#navigate" class="flex justify-between items-center mt-2">
+      <div data-authentication-target="otp" data-action="keydown->authentication#validate focusin->authentication#select paste->authentication#paste keyup->authentication#navigate" class="flex justify-between items-center mt-2">
         <div class="flex rounded-lg ring-2 ring-inset ring-jw-bokara-gray bg-jw-onyx">
           <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" }, autofocus: true %>
           <%= f.text_field "alphanum", maxlength: 1, class: "otp", data: { control: "otp" } %>

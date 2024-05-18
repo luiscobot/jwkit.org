@@ -10,5 +10,5 @@ application.register("flash", FlashController)
 import FormController from "./form_controller"
 application.register("form", FormController)
 
-import OtpController from "./otp_controller"
-application.register("otp", OtpController)
+import AuthenticationController from "./authentication_controller"
+application.register("authentication", AuthenticationController)

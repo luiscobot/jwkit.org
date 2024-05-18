@@ -1,11 +1,11 @@
 import { Controller } from "@hotwired/stimulus"
 
-// Connects to data-controller="otp"
+// Connects to data-controller="authentication"
 export default class extends Controller {
-  static targets = ["control"];
+  static targets = ["otp"];
 
   connect() {
-    this.inputs = Array.from(this.controlTarget.querySelectorAll("[data-control='otp']"));
+    this.inputs = Array.from(this.otpTarget.querySelectorAll("[data-control='otp']"));
   }
 
   validate(ev) {
@@ -28,6 +28,7 @@ export default class extends Controller {
     let alphanums = token.split("");
     this.inputs.forEach((input, index) => input.value = alphanums[index]);
     this.inputs[this.inputs.length - 1].focus();
+    ev.target.closest("form").submit();
   }
   
   navigate(ev) {
