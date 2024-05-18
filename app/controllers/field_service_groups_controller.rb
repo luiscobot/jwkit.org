@@ -9,7 +9,7 @@ class FieldServiceGroupsController < ApplicationController
 
   def new
     @field_service_group = FieldServiceGroup.new
-    @action = I18n.t("field_service_group.create.title")
+    @commit = I18n.t("field_service_group.create.title")
   end
 
   def create
@@ -18,7 +18,7 @@ class FieldServiceGroupsController < ApplicationController
     if @field_service_group.save
       redirect_to field_service_groups_url, notice: I18n.t("field_service_group.create.notices.success")
     else
-      @action = I18n.t("field_service_group.create.title")
+      @commit = I18n.t("field_service_group.create.title")
       render :new, status: :unprocessable_entity
     end
   end

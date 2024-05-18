@@ -6,7 +6,7 @@
     <p class="mt-2 font-inter font-medium text-base text-jw-quick-silver"><%= t("congregation") %> Rosales</p>
   </div>
 
-  <div class="grid grid-cols-4">
-    <%= render "form", field_service_group: @field_service_group, action: @action %>
+  <div class="grid grid-cols-2">
+    <%= render "form", field_service_group: @field_service_group, commit: @commit %>
   </div>
 </section>
