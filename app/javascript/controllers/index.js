@@ -4,11 +4,14 @@
 
 import { application } from "./application"
 
+import AuthenticationController from "./authentication_controller"
+application.register("authentication", AuthenticationController)
+
 import FlashController from "./flash_controller"
 application.register("flash", FlashController)
 
 import FormController from "./form_controller"
 application.register("form", FormController)
 
-import AuthenticationController from "./authentication_controller"
-application.register("authentication", AuthenticationController)
+import FormValidationController from "./form_validation_controller"
+application.register("form-validation", FormValidationController)
