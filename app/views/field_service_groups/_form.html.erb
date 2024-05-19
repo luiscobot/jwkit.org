@@ -8,6 +8,11 @@
       <div class="flex flex-col" data-control="number">
         <%= form.label :number, t("field_service_group.number"), class: "label" %>
         <%= form.number_field :number, class: "control" %>
+        <% if field_service_group.errors.include?(:number) %>
+          <div data-form-validation-error class="flex flex-col mt-2">
+            <span class="font-inter font-medium text-sm text-jw-error"><%= field_service_group.errors.full_messages_for(:number).first %></span>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
