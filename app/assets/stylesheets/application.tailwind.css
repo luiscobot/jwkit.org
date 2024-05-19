@@ -64,7 +64,7 @@
   }
 
   .field_with_errors {
-    @apply flex;
+    @apply flex flex-col;
   }
 
   .invalid {
