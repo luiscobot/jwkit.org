@@ -1,39 +1,39 @@
-<%= form_with(model: [field_service_group, publisher, field_service_report]) do |form| %>
+<%= form_with(model: [field_service_group, publisher, field_service_report], data: { controller: "form-validation", form_validation_target: "fieldServiceReport", action: "submit->form-validation#validate input->form-validation#clean change->form-validation#toggle" }) do |form| %>
   <div class="px-6 py-4 bg-jw-bunting rounded-t-lg ring-2 ring-inset ring-jw-san-marino">
     <h2 class="font-inter font-medium text-base text-jw-white"><%= publisher.name %></h2>
   </div>
 
-  <div data-controller="form" class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
+  <div class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
     <div class="flex col-span-full">
       <% if publisher.service_privilege.present? %>
         <div class="flex">
           <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-san-marino bg-jw-san-marino/10"><%= t("publisher.service_privilege.#{ publisher.service_privilege }") %></p>
         </div>
       <% end %>
-    
+
       <div class="ml-auto flex">
         <p class="w-fit px-3 py-1 rounded-lg font-inter font-medium text-base text-jw-onyx bg-jw-seashell"><%= last_month_date %></p>
       </div>
     </div>
 
-    <div class="flex items-center gap-2 col-span-full">
-      <%= form.check_box :shared_in_ministry, data: { action: "change->form#toggle" }, class: "checkbox" %>
+    <div class="flex items-center gap-2 col-span-full" data-control="sharedInMinistry">
+      <%= form.check_box :shared_in_ministry, class: "checkbox" %>
       <%= form.label :shared_in_ministry, t("field_service_report.new.shared_in_ministry"), class: "label" %>
     </div>
 
-    <div class="flex flex-col gap-2">
+    <div class="flex flex-col gap-2" data-control="bibleStudies">
       <%= form.label :bible_studies, t("field_service_report.new.bible_studies"), class: "label" %>
-      <%= form.text_field :bible_studies, data: { form_target: "control" }, disabled: true, class: "control" %>
+      <%= form.text_field :bible_studies, disabled: true, class: "control" %>
     </div>
 
     <% if publisher.service_privilege.present? %>
-      <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2" data-control="hours">
         <%= form.label :hours, t("field_service_report.new.hours"), class: "label" %>
-        <%= form.text_field :hours, data: { form_target: "control" }, disabled: true, class: "control" %>
+        <%= form.text_field :hours, disabled: true, class: "control" %>
       </div>
     <% end %>
 
-    <div class="flex flex-col gap-2 col-span-full">
+    <div class="flex flex-col gap-2 col-span-full" data-control="comments">
       <%= form.label :comments, t("field_service_report.new.comments"), class: "label" %>
       <%= form.text_area :comments, class: "control resize-none" %>
     </div>
