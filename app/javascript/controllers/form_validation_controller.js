@@ -52,15 +52,46 @@ export default class extends Controller {
           }
         }
       }
+
+      if (this.hasFieldServiceReportTarget) {
+        if (control.dataset.control === "hours") {
+          let toggle = this.controls
+            .find((control) => control.dataset.control === "sharedInMinistry")
+            .querySelector("input[type='checkbox']");
+          if (toggle.checked) {
+            let input = control.querySelector("input");
+            if (!input.value.trim()) {
+              this.invalidate(input, "No puede estar vacío.");
+            }
+          }
+        }
+      }
     });
 
-    if (!this.fieldServiceGroupTarget.dataset.formValidationError) {
+    if (
+      this.hasFieldServiceGroupTarget &&
+      !this.fieldServiceGroupTarget.dataset.formValidationError
+    ) {
+      this.commit();
+    }
+
+    if (
+      this.hasFieldServiceReportTarget &&
+      !this.fieldServiceReportTarget.dataset.formValidationError
+    ) {
       this.commit();
     }
   }
 
   invalidate(input, message) {
-    this.fieldServiceGroupTarget.dataset.formValidationError = true;
+    if (this.hasFieldServiceGroupTarget) {
+      this.fieldServiceGroupTarget.dataset.formValidationError = true;
+    }
+
+    if (this.hasFieldServiceReportTarget) {
+      this.fieldServiceReportTarget.dataset.formValidationError = true;
+    }
+
     input.classList.add("invalid");
     input.classList.remove(
       "ring-jw-san-marino/50",
@@ -79,7 +110,14 @@ export default class extends Controller {
     let error = control.querySelector("[data-form-validation-error]");
 
     if (control.contains(error)) {
-      delete this.fieldServiceGroupTarget.dataset.formValidationError;
+      if (this.hasFieldServiceGroupTarget) {
+        delete this.fieldServiceGroupTarget.dataset.formValidationError;
+      }
+
+      if (this.hasFieldServiceReportTarget) {
+        delete this.fieldServiceReportTarget.dataset.formValidationError;
+      }
+
       input.classList.remove("invalid");
       input.classList.add(
         "ring-jw-san-marino/50",
@@ -91,6 +129,12 @@ export default class extends Controller {
   }
 
   commit() {
-    this.fieldServiceGroupTarget.submit();
+    if (this.hasFieldServiceGroupTarget) {
+      this.fieldServiceGroupTarget.submit();
+    }
+
+    if (this.hasFieldServiceReportTarget) {
+      this.fieldServiceReportTarget.submit();
+    }
   }
 }

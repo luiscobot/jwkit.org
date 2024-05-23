@@ -19,7 +19,7 @@ class FieldServiceReportsController < ApplicationController
     @field_service_report = @publisher.field_service_reports.new(field_service_report_params)
     @field_service_report.year = Date.current.last_month.year
     @field_service_report.month = Date.current.last_month.month
-    @field_service_report.auxiliary_pioneer = @publisher.service_privilege.present? && @publisher.service_privilege.name == "auxiliary pioneer"
+    @field_service_report.auxiliary_pioneer = @publisher.service_privilege.present? && @publisher.service_privilege == "auxiliary pioneer"
 
     if @field_service_report.save
       redirect_to field_service_group_publishers_url(@publisher.field_service_group), notice: I18n.t("field_service_report.create.notices.success")
