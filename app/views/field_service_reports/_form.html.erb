@@ -21,19 +21,19 @@
       <%= form.label :shared_in_ministry, t("field_service_report.new.shared_in_ministry"), class: "label" %>
     </div>
 
-    <div class="flex flex-col" data-control="bibleStudies">
+    <div class="flex flex-col gap-2" data-control="bibleStudies">
       <%= form.label :bible_studies, t("field_service_report.new.bible_studies"), class: "label" %>
       <%= form.number_field :bible_studies, disabled: true, class: "control" %>
     </div>
 
     <% if publisher.service_privilege.present? %>
-      <div class="flex flex-col" data-control="hours">
+      <div class="flex flex-col gap-2" data-control="hours">
         <%= form.label :hours, t("field_service_report.new.hours"), class: "label" %>
         <%= form.number_field :hours, disabled: true, class: "control" %>
       </div>
     <% end %>
 
-    <div class="flex flex-col col-span-full" data-control="comments">
+    <div class="flex flex-col gap-2 col-span-full" data-control="comments">
       <%= form.label :comments, t("field_service_report.new.comments"), class: "label" %>
       <%= form.text_area :comments, class: "control resize-none" %>
     </div>
