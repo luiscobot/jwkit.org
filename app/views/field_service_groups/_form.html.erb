@@ -5,7 +5,7 @@
     </div>
 
     <div class="grid grid-cols-2 gap-6 p-6 bg-jw-white rounded-b-lg">
-      <div class="flex flex-col" data-control="number">
+      <div class="flex flex-col gap-2" data-control="number">
         <%= form.label :number, t("field_service_group.number"), class: "label" %>
         <%= form.number_field :number, class: "control" %>
         <% if field_service_group.errors.include?(:number) %>
