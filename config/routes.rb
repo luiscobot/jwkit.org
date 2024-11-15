@@ -6,10 +6,6 @@ Rails.application.routes.draw do
 
   passwordless_for :users
 
-  if defined? Debugbar
-    mount Debugbar::Engine => Debugbar.config.prefix
-  end
-
   resources :field_service_groups, only: [:index, :new, :create], path: "groups" do
     resources :publishers, only: :index do
       resources :field_service_reports, only: [:new, :create], path: "reports"
