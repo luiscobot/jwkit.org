@@ -75,9 +75,6 @@ group :development do
 
   # Preview mail in the browser instead of sending [https://github.com/ryanb/letter_opener]
   gem "letter_opener"
-
-  # Powerful debugbar for Ruby on Rails [https://github.com/julienbourdeau/debugbar]
-  gem "debugbar"
 end
 
 group :test do
