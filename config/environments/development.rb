@@ -75,6 +75,4 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   routes.default_url_options[:host] ||= 'https://jwkit.local'
-
-  config.web_console.permissions = '::ffff:192.168.20.49'
 end
