@@ -13,19 +13,15 @@ field_service_groups = [
 ]
 
 field_service_groups.each do |group|
-  FieldServiceGroup.create(number: group)
+  FieldServiceGroup.create!(number: group)
 end
 
 service_privileges = [
-  "auxiliary pioneer",
-  "regular pioneer",
-  "special pioneer",
-  "field missionary"
+  "auxiliary_pioneer",
+  "regular_pioneer",
+  "special_pioneer",
+  "field_missionary"
 ]
-
-service_privileges.each do |privilege|
-  ServicePrivilege.create(name: privilege)
-end
 
 publishers = [
   "Kenneth Cook, Jr.",
@@ -39,14 +35,32 @@ publishers = [
   "Jeffrey Winder"
 ]
 
+genders = ["male", "female"]
+
+groups = ["other_sheep", "anointed"]
+
 FieldServiceGroup.all.each do |group|
+  # Take the first 3 publishers from the array and remove them, ensuring no duplication across groups
   group_publishers = publishers.shift(3)
 
-  group_publishers.each do |publisher|
-    service_privilege = [ServicePrivilege.all.sample, nil].sample
 
-    Publisher.create(name: publisher, service_privilege: service_privilege, field_service_group: group)
+  group_publishers.each_with_index do |publisher, index|
+    first_name, last_name = publisher.split(' ', 2)  # Split the string into first and last names
+    gender = genders.sample  # Randomly assign gender
+    group_type = groups.sample  # Randomly assign group type
+    service_privilege = [service_privileges.sample, nil].sample  # Randomly assign service privilege
+
+    # Create the Publisher instance with all required attributes, using create! to raise errors
+    Publisher.create!(
+      first_name: first_name,
+      last_name: last_name,
+      gender: gender,
+      group: group_type,
+      service_privilege: service_privilege,
+      field_service_group: group
+    )
   end
 end
 
-User.create(email: "mail@jwkit.org")
+# Create a User
+User.create!(email: "dev@jwkit.org")  # Use create! here as well for consistency

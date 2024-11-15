@@ -10,10 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_05_212023) do
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
+ActiveRecord::Schema[8.0].define(version: 2024_05_05_212023) do
   create_table "field_service_groups", force: :cascade do |t|
     t.integer "number"
     t.datetime "created_at", null: false
@@ -29,14 +26,14 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_212023) do
     t.text "comments"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "publisher_id", null: false
+    t.integer "publisher_id", null: false
     t.boolean "auxiliary_pioneer", default: false
     t.index ["publisher_id"], name: "index_field_service_reports_on_publisher_id"
   end
 
   create_table "passwordless_sessions", force: :cascade do |t|
     t.string "authenticatable_type"
-    t.bigint "authenticatable_id"
+    t.integer "authenticatable_id"
     t.datetime "timeout_at", precision: nil, null: false
     t.datetime "expires_at", precision: nil, null: false
     t.datetime "claimed_at", precision: nil
@@ -51,7 +48,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_212023) do
   create_table "publishers", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "field_service_group_id"
+    t.integer "field_service_group_id"
     t.string "first_name"
     t.string "last_name"
     t.date "date_of_birth"
@@ -66,7 +63,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_05_212023) do
     t.string "email", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index "lower((email)::text)", name: "index_users_on_lowercase_email", unique: true
+    t.index "LOWER(email)", name: "index_users_on_lowercase_email", unique: true
   end
 
   add_foreign_key "field_service_reports", "publishers"
